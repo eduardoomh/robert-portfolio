@@ -1,0 +1,46 @@
+.mobileCountryIcon {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1rem;
+    transition: transform 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+/* Efecto de zoom al hacer clic */
+.mobileCountryIcon:active {
+    transform: scale(1.2); /* Aumenta un 20% el tamaño temporalmente */
+}
+
+.countryArrow {
+    transition: transform 0.5s ease;
+}
+
+.countryArrowOpen {
+    transform: rotate(180deg);
+}
+
+.countryOptionBar {
+    position: fixed;
+    top: -4.5rem; /* Empezamos fuera de la vista */
+    right: 0;
+    width: 100vw;
+    height: 4.5rem; /* Lo mismo que el header */
+    background-color: #C0FF81;
+    color: #1C1B1B;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    align-items: center;
+    z-index: 10; /* Aseguramos que esté encima de otros elementos */
+    padding: 0 1rem;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: top 0.2s ease;
+   
+}
+
+.showCountryBar {
+    top: 4.5rem; /* Muestra el aviso debajo del header */
+}
+

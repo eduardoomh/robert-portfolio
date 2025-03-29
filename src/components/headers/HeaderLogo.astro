@@ -1,0 +1,44 @@
+---
+import "@fontsource/rubik";
+import HamburgerMenu from "./HamburguerMenu";
+import CountryOption from "../countryOption/ContryOption";
+---
+
+<header class="header">
+    <HamburgerMenu client:load />
+    <div class="mobile-logo">
+        <p>Robert Riera.</p>
+    </div>
+    <CountryOption client:load />
+</header>
+
+<style>
+    .header {
+        display: grid;
+        grid-template-columns: 4rem 1fr 4rem;
+        grid-template-rows: 1fr;
+        justify-content:;
+        width: 100vw;
+        height: 4.5rem;
+        background-color: #1c1b1b;
+        color: #f7f7f7;
+        z-index: 100;
+        border-bottom: 1px solid #d7d9db;
+    }
+
+    .mobile-logo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: "rubik", sans-serif;
+        font-weight: 800;
+        font-style: italic;
+        font-size: 26px;
+        margin: 0;
+        padding: 0;
+    }
+
+    .mobile-logo p {
+        margin: 0;
+    }
+</style>

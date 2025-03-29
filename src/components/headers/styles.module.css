@@ -1,0 +1,74 @@
+.mobileMenu {
+    display: grid;
+    place-items: center;
+}
+.iconMobileMenu {
+    fill: #f7f7f7;
+    transition: transform 0.3s ease-in-out;
+}
+
+.iconMobileMenu:hover {
+    transform: scale(1.1); /* Aumenta un 10% el tamaño */
+    cursor: pointer;
+}
+
+/* Efecto de zoom al hacer clic */
+.iconMobileMenu:active {
+    transform: scale(1.2); /* Aumenta un 20% el tamaño temporalmente */
+    cursor: pointer;
+}
+
+.bottomSheet {
+    position: fixed;
+    bottom: -50%;
+    left: 0;
+    width: calc(100% - 40px);
+    height: 50%;
+    background: #1c1b1b;
+    color: #f7f7f7;
+    box-shadow: 0px -5px 15px rgba(0, 0, 0, 0.2);
+    border-radius: 20px 20px 0 0;
+    border-top: 1px solid #f7f7f7;
+    padding: 20px;
+    transition: bottom 0.4s ease-in-out;
+}
+
+.bottomSheetOpen {
+    bottom: 0%;
+}
+
+.closeBtn {
+    background: #ff3b30;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.menuOptions {
+    list-style: none;
+    padding: 0;
+}
+
+.menuOptions li {
+    display: flex;
+    align-items: center;
+    height: 32px;
+    padding: 10px;
+    font-size: 18px;
+    border-bottom: 1px solid #f7f7f7;
+    cursor: pointer;
+}
+
+.menuOptions li:hover {
+    background: #333;
+}
+
+.socialIcons{
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 2.5rem;
+}
