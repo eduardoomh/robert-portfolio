@@ -1,0 +1,64 @@
+---
+import "@fontsource/rubik";
+import CountryOption from "../components/header/countryOption/ContryOption";
+import Logo from "../components/header/Logo.astro";
+import Socialicons from "../components/header/social-icons/Socialicons.astro";
+---
+
+<header class="header">
+    <nav class="header-nav">
+        <Logo />
+        <ul class="header-menu">
+            <li>Home</li>
+            <li>Experience</li>
+            <li>Skills</li>
+            <li>Contact</li> 
+            <Socialicons />
+            <CountryOption client:load isDesktop={true} />
+        </ul>
+        <div>
+           
+        </div>
+        
+    </nav>
+</header>
+
+<style>
+    .header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: var(--max-width);
+        height: 4.5rem;
+        color: var(--primary-white);
+        z-index: 100;
+        border-bottom: 0.2px solid  var(--secondary-green);
+    }
+
+    .header-nav {
+        display: grid;
+        grid-template-columns: 15rem 1fr;
+        grid-template-rows: 1fr;
+        width: 1050px;
+        height: 4.5rem;
+        color: var(--primary-white);
+        z-index: 100;
+    }
+
+    .header-menu{
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 20px;
+        padding-right: 16px;
+        list-style: none;
+    }
+
+    @media (max-width: 767px) {
+       .header {
+            display: none;
+        }
+
+    }
+    
+</style>

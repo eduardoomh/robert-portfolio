@@ -1,0 +1,33 @@
+<div class="container">
+    <div class="content">
+        <slot />
+    </div>
+    
+</div>
+
+<style>
+    .container{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 24px 16px;
+    }
+    .content {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        width: 100vw;
+        box-sizing: border-box;
+    }
+
+    @media (min-width: 768px) {
+        .content {
+            display: grid;
+            grid-template-columns: 1.1fr 1fr;
+            gap: 2rem;
+            width: 1050px;
+            padding: 48px 16px;
+            max-width: 1200px;
+        }
+    }
+</style>

@@ -1,0 +1,27 @@
+---
+/* Recibimos las props `src` y `visible`, que es un array con los tamaños en los que debe ser visible */
+const { src, visible, width } = Astro.props;
+---
+  <!-- Si el array 'visible' contiene 'mobile' y el viewport es mobile (max-width: 768px), mostramos la imagen -->
+  <img 
+    src={src} 
+    class={visible === "mobile" ? "mobile-visible" : "desktop-visible"} 
+    alt="Imagen responsive" 
+    width={width || "100%"} 
+    height="auto" />
+
+<style>
+  /* Ocultamos las imágenes no pertinentes usando display: none */
+
+  @media (min-width: 768px) {
+    .mobile-visible {
+      display: none;
+    }
+  }
+
+  @media (max-width: 767px) {
+    .desktop-visible {
+      display: none;
+    }
+  }
+</style>

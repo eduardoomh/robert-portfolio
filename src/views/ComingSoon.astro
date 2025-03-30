@@ -1,0 +1,26 @@
+---
+import Title from "../components/basics/Title.astro";
+import Subtitle from "../components/basics/Subtitle.astro";
+import Text from "../components/basics/Text.astro";
+import Container from "../components/basics/Container.astro";
+import Divider from "../components/basics/Divider.astro";
+import CustomImg from "../components/basics/CustomImg.astro";
+import CustomButton from "../components/basics/CustomButton.astro";
+import Column from "../components/basics/Column.astro";
+---
+
+<Container>
+    <Column>
+        <Title>Coming soon</Title>
+        <Subtitle>My portfolio’s English version is almost ready!</Subtitle>
+        <Divider />
+        <CustomImg src="/images/robert-in-computer.png" visible={"mobile"} />
+        <Text>Our team is fine-tuning the details, optimizing strategies, and
+            adding a touch of digital magic. 🚀✨</Text>
+        <CustomButton link="https://robertriera.com/wp-content/uploads/2024/03/Robert-Riera-HV.pdf">Read my CV</CustomButton>
+    </Column>
+    <Column>
+        <CustomImg src="/images/robert-in-computer-desktop.png" visible={"desktop"} width="90%" />
+    </Column>
+   
+</Container>

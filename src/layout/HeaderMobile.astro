@@ -1,0 +1,43 @@
+---
+import "@fontsource/rubik";
+import HamburgerMenu from "../components/header/HamburguerMenu/HamburguerMenu";
+import CountryOption from "../components/header/countryOption/ContryOption";
+import Logo from "../components/header/Logo.astro";
+---
+
+<header class="header-mobile">
+    <HamburgerMenu client:load />
+    <Logo />
+    <CountryOption client:load />
+   
+</header>
+
+<style>
+    .header-mobile {
+        display: grid;
+        grid-template-columns: 4rem 1fr 4rem;
+        grid-template-rows: 1fr;
+        justify-content:;
+        width: var(--max-width);
+        height: 4.5rem;
+        color: var(--primary-white);
+        z-index: 100;
+        border-bottom: 1px solid var(--primary-white);
+    }
+
+    .header-country-options {
+            display: grid;
+            place-items: center;
+            background-color: red;
+            margin: 0;
+            padding: 0;
+
+        }
+    
+    @media (min-width: 768px) {
+       .header-mobile {
+            display: none;
+        }
+
+    }
+</style>

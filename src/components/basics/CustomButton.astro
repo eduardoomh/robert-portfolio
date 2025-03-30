@@ -1,0 +1,54 @@
+---
+/* Este componente maneja un botón con un slot para el texto y un icono SVG */
+export interface Props {
+  link: string;
+}
+
+const { link } = Astro.props;
+---
+
+<a href={link} target="_blank" rel="noopener noreferrer" class="btn">
+    <span class="btn-text">
+      <slot /> <!-- Aquí se inyectará el texto del botón -->
+    </span>
+    <!-- Icono SVG -->
+    <svg width="19" height="23" viewBox="0 0 19 23" fill="none" xmlns="http://www.w3.org/2000/svg" class="btn-icon">
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M18.5 21.3923V8.2H12.5C11.9477 8.2 11.5 7.70751 11.5 7.1V0.5H1.498C0.946999 0.5 0.5 1.0005 0.5 1.5912V21.4088C0.500552 22.0116 0.944971 22.5 1.493 22.5H17.507C17.7722 22.498 18.0258 22.3801 18.212 22.1724C18.3983 21.9646 18.5018 21.684 18.5 21.3923ZM13.5 6H18.5L13.5 0.503297V6Z" fill="#F7F7F7"/>
+    </svg>
+</a>
+
+<style>
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px; /* Espacio entre el texto y el icono */
+    width: 200px;
+    height: 50px;
+    padding: 0 15px;
+    border: 0.5px solid var(--secondary-green);
+    background-color: transparent;
+    color: var(--primary-white);
+    font-weight: 600;
+    font-size: 18px;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.3s ease;
+  }
+
+  .btn:hover {
+    transform: scale(1.05); /* Hace que el botón crezca ligeramente */
+  }
+
+  .btn-text {
+    display: inline-block;
+  }
+
+  .btn-icon {
+    fill: #F7F7F7;
+    width: 19px;
+    height: 23px;
+  }
+
+</style>

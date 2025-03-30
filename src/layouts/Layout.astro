@@ -1,20 +1,43 @@
 ---
-import HeaderLogo from "../components/headers/HeaderLogo.astro";
-import '@fontsource/rubik';
+import HeaderDesktop from "../layout/HeaderDesktop.astro";
+import HeaderMobile from "../layout/HeaderMobile.astro";
+import "@fontsource/rubik";
 ---
 
 <!doctype html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Robert Riera Portfolio - EN</title>
 
+		<!-- SEO Essentials -->
+		<title>Digital Marketing - Robert Riera</title>
+		<meta name="description" content="Boost your brand with top-tier digital marketing strategies. Learn SEO, PPC, social media, and content marketing from Robert Riera." />
+		<meta name="keywords" content="digital marketing, SEO, social media, content marketing, PPC, branding, Robert Riera" />
+		<meta name="author" content="Robert Riera" />
+		<link rel="canonical" href="https://yourwebsite.com/" />
+
+		<!-- Open Graph (Facebook & LinkedIn) -->
+		<meta property="og:title" content="Digital Marketing - Robert Riera" />
+		<meta property="og:description" content="Boost your brand with top-tier digital marketing strategies." />
+		<meta property="og:image" content="https://yourwebsite.com/og-image.jpg" />
+		<meta property="og:url" content="https://yourwebsite.com/" />
+		<meta property="og:type" content="website" />
+
+		<!-- Twitter Card -->
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content="Digital Marketing - Robert Riera" />
+		<meta name="twitter:description" content="Boost your brand with top-tier digital marketing strategies." />
+		<meta name="twitter:image" content="https://yourwebsite.com/twitter-image.jpg" />
+
+		<!-- Fonts -->
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700;900&display=swap" />
 	</head>
 	<body>
-		<HeaderLogo client:load />
+		<HeaderDesktop />
+		<HeaderMobile />
 		<slot />
 	</body>
 </html>
@@ -27,9 +50,15 @@ import '@fontsource/rubik';
 		height: 100%;
 	}
 	:root {
-		font-family: "rubik", sans-serif;
-		background-color: #1C1B1B;
-		width: 100vw;
-		max-width: 100vw;
+		--primary-dark: #1c1b1b;
+		--primary-white: #f7f7f7;
+		--secondary-green: #c0ff81;
+		--primary-font: "rubik", sans-serif;
+		--max-width: 100vw;
+		font-family: var(--primary-font);
+		background: rgb(28,27,27);
+		/*background: linear-gradient(321deg, rgba(28,27,27,1) 56%, rgba(51,73,29,1) 93%);*/
+		width: var(--max-width);
+		max-width: var(--max-width);
 	}
 </style>

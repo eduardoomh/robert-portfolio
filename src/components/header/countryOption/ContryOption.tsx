@@ -1,8 +1,13 @@
 import { useState } from 'react';
 import styles from './styles.module.css'
 
-export default function CountryOption() {
+interface Props{
+    isDesktop?: boolean;
+}
+
+export default function CountryOption(props: Props) {
     const [isOpen, setIsOpen] = useState(false);
+    const { isDesktop } = props
 
     const toggleMenu = () => {
         setIsOpen(!isOpen);
@@ -11,8 +16,8 @@ export default function CountryOption() {
     return (
         <div className={styles.mobileCountryIcon} onClick={toggleMenu}>
             <svg
-                width="27"
-                height="27"
+                width={isDesktop ? "20" : "27"}
+                height={isDesktop ? "20" : "27"}
                 viewBox="0 0 27 27"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
