@@ -55,7 +55,7 @@ export default function CountryOption(props: Props) {
                             </g>
                         </g>
                     </svg>
-                    <p>Visit the spanish version of this web </p>
+                    <p>Visit the spanish version </p>
                     <svg width="11" height="18" viewBox="0 0 11 18" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M6.9147 8.99998L0.314697 2.39998L2.20003 0.514648L10.6854 8.99998L2.20003 17.4853L0.314697 15.6L6.9147 8.99998Z" fill="#1C1B1B" />
                     </svg>

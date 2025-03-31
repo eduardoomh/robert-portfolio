@@ -37,6 +37,7 @@
     top: -4.5rem; /* Empezamos fuera de la vista */
     right: 0;
     width: 100vw;
+    max-width: 100vw;
     height: 4.5rem; /* Lo mismo que el header */
     background-color: var(--secondary-green);
     color: var(--primary-dark);
