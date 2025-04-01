@@ -1,8 +1,15 @@
-<div class="container">
-    <div class="content">
+---
+export interface Props {
+  columns: number;
+}
+
+const { columns } = Astro.props;
+---
+
+<div class='container'>
+    <div class={`content ${columns === 2 ? 'content-2-columns' : 'content-1-column'}`}>
         <slot />
     </div>
-    
 </div>
 
 <style>
@@ -11,6 +18,7 @@
         justify-content: center;
         align-items: center;
         padding: 24px 16px;
+        border-bottom: 1px solid var(--primary-white);
     }
     .content {
         display: flex;
@@ -28,6 +36,12 @@
             width: 1050px;
             padding: 48px 16px;
             max-width: 1200px;
+        }
+        .content-1-column{
+            grid-template-columns: 1fr;
+        }
+        .content-2-columns{
+            grid-template-columns: 1.1fr 1fr;
         }
     }
 </style>

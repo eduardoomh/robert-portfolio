@@ -35,7 +35,7 @@
     bottom: -70%;
     left: 0;
     width: calc(100% - 40px);
-    height: 50%;
+    height: 55%;
     background: var(--primary-dark);
     color: var(--primary-white);
     box-shadow: 0px -5px 15px rgba(0, 0, 0, 0.2);
