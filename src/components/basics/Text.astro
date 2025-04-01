@@ -1,11 +1,10 @@
-
-<p class="text">
+<p class="text animate-fade-in">
     <slot />
 </p>
 
 <style>
     .text {
-        font-family: 'Rubik', sans-serif;
+        font-family: "Rubik", sans-serif;
         font-weight: 300;
         font-size: 16px;
         margin: 10px 0;
@@ -13,8 +12,23 @@
     }
 
     @media (min-width: 767px) {
-    .text {
-        font-size: 16px;
+        .text {
+            font-size: 16px;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-30px); /* Ahora baja en lugar de subir */
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fade-in {
+            animation: fadeIn 0.3s ease-out;
+        }
     }
-  }
 </style>

@@ -1,9 +1,10 @@
 ---
-import Column from '../../components/basics/Column.astro'
-import Container from '../../components/basics/Container.astro'
-import Divider from '../../components/basics/Divider.astro'
-import Subtitle from '../../components/basics/Subtitle.astro'
-import Title from '../../components/basics/Title.astro'
+import Column from "../../components/basics/Column.astro";
+import Container from "../../components/basics/Container.astro";
+import CustomButton from "../../components/basics/CustomButton.astro";
+import Divider from "../../components/basics/Divider.astro";
+import Subtitle from "../../components/basics/Subtitle.astro";
+import Title from "../../components/basics/Title.astro";
 ---
 
 <Container columns={1}>
@@ -11,5 +12,60 @@ import Title from '../../components/basics/Title.astro'
         <Title>Trusted by leading companies</Title>
         <Subtitle>Proud to have worked with them</Subtitle>
         <Divider />
+        <div class="company-cards">
+            <article>
+                <img
+                    src="/images/companies/drenvio-company-mobile.png"
+                    alt="Inconexo Shop"
+                    width="300"
+                    height="168"
+                />
+                <h3 class="company-card-item-text">Inconexo shop</h3>
+                <CustomButton link="/companies/drenvio" expand={true}>
+                    More information
+                </CustomButton>
+            </article>
+            <article>
+                <img
+                    src="/images/companies/drenvio-company-mobile.png"
+                    alt="Inconexo Shop"
+                    width="300"
+                    height="168"
+                />
+                <h3 class="company-card-item-text">Inconexo shop</h3>
+                <CustomButton link="/companies/drenvio" expand={true}>
+                    More information
+                </CustomButton>
+            </article>
+            <article>
+                <img
+                    src="/images/companies/drenvio-company-mobile.png"
+                    alt="Inconexo Shop"
+                    width="300"
+                    height="168"
+                />
+                <h3 class="company-card-item-text">Inconexo shop</h3>
+                <CustomButton link="/companies/drenvio" expand={true}>
+                    More information
+                </CustomButton>
+            </article>
+        </div>
     </Column>
 </Container>
+
+<style>
+    .company-cards {
+        display: flex;
+        justify-content: flex-start;
+        gap: 2rem;
+        max-width: 100vw;
+        overflow-x: scroll;
+        margin-top: 1rem;
+        margin-left: 16px;
+    }
+    .company-card-item-text{
+        font-size: 20px;
+        color: var(--primary-white);
+    }
+    
+</style>

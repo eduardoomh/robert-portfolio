@@ -2,22 +2,28 @@
 import "@fontsource/rubik";
 import Logo from "../components/header/Logo.astro";
 import Socialicons from "../components/header/social-icons/Socialicons.astro";
+
+const currentPath = Astro.url.pathname + (typeof window !== "undefined" ? window.location.hash : "");
 ---
 
 <header class="header">
     <nav class="header-nav">
         <Logo />
         <ul class="header-menu">
-            <li>Home</li>
-            <li>Experience</li>
-            <li>Skills</li>
-            <li>Contact</li> 
+            <li>
+                <a href="/" class={`menu-link ${currentPath === "/" ? "active" : ""}`}>Home</a>
+            </li>
+            <li>
+                <a href="/#experience" class={`menu-link ${currentPath === "/#experience" ? "active" : ""}`}>Experience</a>
+            </li>
+            <li>
+                <a href="#skills" class={`menu-link ${currentPath === "#skills" ? "active" : ""}`}>Skills</a>
+            </li>
+            <li>
+                <a href="#contact" class={`menu-link ${currentPath === "#contact" ? "active" : ""}`}>Contact</a>
+            </li>
             <Socialicons />
         </ul>
-        <div>
-           
-        </div>
-        
     </nav>
 </header>
 
@@ -30,7 +36,7 @@ import Socialicons from "../components/header/social-icons/Socialicons.astro";
         height: 4.5rem;
         color: var(--primary-white);
         z-index: 100;
-        border-bottom: 0.2px solid  var(--secondary-green);
+        border-bottom: 0.2px solid var(--secondary-green);
     }
 
     .header-nav {
@@ -43,7 +49,7 @@ import Socialicons from "../components/header/social-icons/Socialicons.astro";
         z-index: 100;
     }
 
-    .header-menu{
+    .header-menu {
         display: flex;
         justify-content: flex-end;
         align-items: center;
@@ -52,11 +58,47 @@ import Socialicons from "../components/header/social-icons/Socialicons.astro";
         list-style: none;
     }
 
+    /* Estilos para los enlaces */
+    .menu-link {
+        text-decoration: none;
+        color: var(--primary-white);
+        font-weight: 400;
+        font-size: 16px;
+        padding: 4px 4px;
+        position: relative;
+        transition: color 0.3s ease-in-out;
+    }
+
+    /* Hover con subrayado animado */
+    .menu-link::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -2px;
+        width: 100%;
+        height: 1px;
+        background-color: var(--secondary-green);
+        transform: scaleX(0);
+        transition: transform 0.1s ease-in-out;
+    }
+
+    .menu-link:hover {
+        color: var(--secondary-green);
+    }
+
+    .menu-link:hover::after {
+        transform: scaleX(1);
+    }
+
+    /* Cuando un enlace está activo */
+    .menu-link.active {
+        border-bottom: 1px solid var(--secondary-green);
+        color: var(--secondary-green);
+    }
+
     @media (max-width: 767px) {
-       .header {
+        .header {
             display: none;
         }
-
     }
-    
 </style>

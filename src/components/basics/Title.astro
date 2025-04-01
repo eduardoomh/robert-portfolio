@@ -1,4 +1,4 @@
-<h1 class="title typewriter">
+<h1 class="title animate-fade-in">
     <slot />
 </h1>
 
@@ -19,4 +19,19 @@
         font-size: 46px;
     }
   }
+
+  @keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-30px); /* Ahora baja en lugar de subir */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.8s ease-out;
+}
 </style>

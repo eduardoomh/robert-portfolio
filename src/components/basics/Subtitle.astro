@@ -1,5 +1,5 @@
 
-<h2 class="subtitle">
+<h2 class="subtitle animate-fade-in">
     <slot />
 </h2>
 
@@ -16,4 +16,19 @@
             font-size: 24px;
         }
     }
+
+    @keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-30px); /* Ahora baja en lugar de subir */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.8s ease-out;
+}
 </style>

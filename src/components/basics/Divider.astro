@@ -1,4 +1,4 @@
-<div class="divider"></div>
+<div class="divider animate-fade-in "></div>
 
 <style>
     .divider {
@@ -7,5 +7,19 @@
         background-color: var(--secondary-green);
         margin: 16px 0; /* Espaciado arriba y abajo */
 
+
+        @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
     }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.8s ease-out;
+  }}
 </style>

@@ -1,5 +1,5 @@
 <section class="social-icons">
-    <a href="https://wa.link/s7kfy4" target="_blank">
+    <a href="https://wa.link/s7kfy4" target="_blank" data-tooltip="WhatsApp">
         <svg
             width="20"
             height="20"
@@ -14,7 +14,7 @@
                 fill="#F7F7F7"></path>
         </svg>
     </a>
-    <a href="https://www.instagram.com/roberterh96/" target="_blank">
+    <a href="https://www.instagram.com/roberterh96/" target="_blank" data-tooltip="Instagram">
         <svg
             width="20"
             height="20"
@@ -27,7 +27,7 @@
                 fill="#F7F7F7"></path>
         </svg>
     </a>
-    <a href="https://www.facebook.com/roberterh1996" target="_blank">
+    <a href="https://www.facebook.com/roberterh1996" target="_blank" data-tooltip="Facebook">
         <svg
             width="15"
             height="20"
@@ -40,7 +40,7 @@
                 fill="#F7F7F7"></path>
         </svg>
     </a>
-    <a href="https://www.linkedin.com/in/robertriera" target="_blank">
+    <a href="https://www.linkedin.com/in/robertriera" target="_blank" data-tooltip="Linkedin">
         <svg
             width="20"
             height="20"
@@ -58,9 +58,36 @@
 </section>
 
 <style>
-    .social-icons {
-        display: flex;
-        justify-content: center;
-        gap: 8px;
-    }
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.social-icons a {
+    position: relative;
+    display: inline-block;
+}
+
+.social-icons a::before {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--primary-white);
+    color: var(--primary-dark);
+    padding: 5px 8px;
+    border-radius: 5px;
+    font-size: 12px;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.1s ease-in-out, visibility 0.1s;
+}
+
+.social-icons a:hover::before {
+    opacity: 1;
+    visibility: visible;
+}
 </style>
