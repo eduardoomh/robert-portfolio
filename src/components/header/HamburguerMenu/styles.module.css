@@ -43,6 +43,7 @@
     border-top: 1px solid var(--secondary-green);
     padding: 20px;
     transition: bottom 0.4s ease-in-out;
+    z-index: 2000;
 }
 
 .bottomSheetOpen {
