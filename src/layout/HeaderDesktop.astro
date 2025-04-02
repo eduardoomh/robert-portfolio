@@ -2,26 +2,17 @@
 import "@fontsource/rubik";
 import Logo from "../components/header/Logo.astro";
 import Socialicons from "../components/header/social-icons/Socialicons.astro";
-
-const currentPath = Astro.url.pathname + (typeof window !== "undefined" ? window.location.hash : "");
+import MenuLink from "../components/header/DesktopMenu/MenuLink";
 ---
 
 <header class="header">
     <nav class="header-nav">
         <Logo />
         <ul class="header-menu">
-            <li>
-                <a href="/" class={`menu-link ${currentPath === "/" ? "active" : ""}`}>Home</a>
-            </li>
-            <li>
-                <a href="/#experience" class={`menu-link ${currentPath === "/#experience" ? "active" : ""}`}>Experience</a>
-            </li>
-            <li>
-                <a href="#skills" class={`menu-link ${currentPath === "#skills" ? "active" : ""}`}>Skills</a>
-            </li>
-            <li>
-                <a href="#contact" class={`menu-link ${currentPath === "#contact" ? "active" : ""}`}>Contact</a>
-            </li>
+            <MenuLink client:load path="/" label="Home" />
+            <MenuLink client:load path="/#experience" label="Experience" />
+            <MenuLink client:load path="/#skills" label="Skills" />
+            <MenuLink client:load path="/#contact" label="Contact" />
             <Socialicons />
         </ul>
     </nav>
