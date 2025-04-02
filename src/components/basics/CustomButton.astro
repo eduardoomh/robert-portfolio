@@ -8,46 +8,30 @@ const { link } = Astro.props;
 ---
 
 <div class="button-container">
-  <a href={link} target="_blank" rel="noopener noreferrer" class="btn">
-    <span class="btn-text">
-      <slot />
-      <!-- Aquí se inyectará el texto del botón -->
-    </span>
-    <!-- Icono SVG -->
-    <svg
-      width="14"
-      height="18"
-      viewBox="0 0 25 28"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      class="btn-icon"
-    >
-      <path
-        fill-rule="evenodd"
-        clip-rule="evenodd"
-        d="M18.5 21.3923V8.2H12.5C11.9477 8.2 11.5 7.70751 11.5 7.1V0.5H1.498C0.946999 0.5 0.5 1.0005 0.5 1.5912V21.4088C0.500552 22.0116 0.944971 22.5 1.493 22.5H17.507C17.7722 22.498 18.0258 22.3801 18.212 22.1724C18.3983 21.9646 18.5018 21.684 18.5 21.3923ZM13.5 6H18.5L13.5 0.503297V6Z"
-        fill="#F7F7F7"
-      ></path>
-    </svg>
-  </a>
+<a href={link} target="_blank" rel="noopener noreferrer" class="btn">
+  <span class="btn-text">
+    <slot />
+    <!-- Aquí se inyectará el texto del botón -->
+  </span>
+  <!-- Icono SVG -->
+  <svg
+    width="14"
+    height="18"
+    viewBox="0 0 25 28"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+    class="btn-icon"
+  >
+    <path
+      fill-rule="evenodd"
+      clip-rule="evenodd"
+      d="M18.5 21.3923V8.2H12.5C11.9477 8.2 11.5 7.70751 11.5 7.1V0.5H1.498C0.946999 0.5 0.5 1.0005 0.5 1.5912V21.4088C0.500552 22.0116 0.944971 22.5 1.493 22.5H17.507C17.7722 22.498 18.0258 22.3801 18.212 22.1724C18.3983 21.9646 18.5018 21.684 18.5 21.3923ZM13.5 6H18.5L13.5 0.503297V6Z"
+      fill="#F7F7F7"></path>
+  </svg>
+</a>
 </div>
 
 <style>
-  /* Transición de entrada para el contenedor del botón */
-  .button-container {
-    opacity: 0;
-    transform: scale(0);
-    transform-origin: center center; /* Hace que la animación de escala inicie desde el centro */
-    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
-  }
-
-  /* Se asegura de que el contenedor se vea correctamente tras la carga */
-  .button-container.show {
-    opacity: 1;
-    transform: scale(1);
-  }
-
-  /* Estilos del botón */
   .btn {
     display: inline-flex;
     align-items: center;
@@ -68,7 +52,6 @@ const { link } = Astro.props;
     transition: all 0.3s ease;
     margin: 10px 0;
   }
-
   .btn-text {
     display: inline-block;
   }
@@ -80,12 +63,10 @@ const { link } = Astro.props;
     margin-top: 4px;
   }
 
-  /* Hover con escala */
   .btn:not(:disabled):hover {
     transform: scale(1.05);
   }
 
-  /* Hover cuando está presionado */
   .btn:not(:disabled):hover:active {
     transform: scale(1.05) translateY(0.125rem);
   }
@@ -118,17 +99,7 @@ const { link } = Astro.props;
 
   @media (min-width: 768px) {
     .btn {
-      width: 200px;
+      min-width: 200px;
     }
   }
 </style>
-
-<script>
-  // Asegura que el contenedor se vea al cargarse la página
-  window.addEventListener('DOMContentLoaded', () => {
-    const buttonContainer = document.querySelector('.button-container');
-    setTimeout(() => {
-      buttonContainer?.classList.add('show');
-    }, 100); // Se añade la clase 'show' para activar la transición
-  });
-</script>

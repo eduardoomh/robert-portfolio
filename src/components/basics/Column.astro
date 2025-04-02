@@ -1,6 +1,13 @@
+---
+interface props {
+  align?: string;
+}
 
-<div class="column">
-  <slot/>
+const { align } = Astro.props;
+---
+
+<div class={`column ${align}`}>
+  <slot />
 </div>
 
 <style>
@@ -9,5 +16,16 @@
     flex-direction: column;
     justify-content: flex-start;
     width: 100%;
+  }
+  .center{
+    align-items: center;
+  }
+
+  .flex-start{
+    align-items: flex-start;
+  }
+
+  .flex-end{
+    align-items: flex-end;
   }
 </style>

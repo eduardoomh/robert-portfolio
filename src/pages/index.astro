@@ -10,6 +10,8 @@ import Text from '../components/basics/Text.astro';
 import CustomImg from '../components/basics/CustomImg.astro';
 import CustomButton from '../components/basics/CustomButton.astro';
 import TrustedCompanies from '../views/companies/TrustedCompanies.astro';
+import ItemSkill from '../components/skills/ItemSkill.astro';
+import ToolboxList from '../views/toolbox/ToolboxList.astro';
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
@@ -48,7 +50,7 @@ import TrustedCompanies from '../views/companies/TrustedCompanies.astro';
 			</Text>
 		</Column>
 		<Column>
-			<CustomImg src="/images/robert-in-computer-desktop.png" visible="desktop" width="80%%" />
+			<CustomImg src="/images/robert-in-computer-desktop-4.png" visible="desktop" width="90%" />
 		</Column>
 	</Container>
 
@@ -57,6 +59,44 @@ import TrustedCompanies from '../views/companies/TrustedCompanies.astro';
 			<Title>My skills</Title>
 			<Subtitle>My Strongest habilities</Subtitle>
 			<Divider />
+			<CustomImg src='/images/skills-banner.png' visible="desktop" />
+			<CustomImg src='/images/skills-banner-mobile.png' visible="mobile" />
+			<br/>
+			<ItemSkill label="Project management" type='project_management'>
+				I organize and manage projects efficiently using tools like ClickUp, Notion, and Google Task. My focus is on strategic planning, resource management, and meeting deadlines, ensuring concrete results in each project.
+			</ItemSkill>
+			<ItemSkill label="Applied Artificial Intelligence in Marketing" type='marketing_ia'>
+				I use AI to automate processes, optimize advertising campaigns, and create personalized content. I integrate solutions based on smart algorithms to improve efficiency and performance in digital marketing.
+			</ItemSkill>
+			<ItemSkill label="Visual Content Creation" type='visual_content'>
+				I design engaging visual content for social media and advertising using Canva and CapCut. Additionally, I develop logos and manage the complete visual identity of brands, creating pieces that reflect their essence and connect with the audience. 
+			</ItemSkill>
+			<ItemSkill label="Web Development with WordPress" type='web_development'>
+				I create functional and SEO-optimized websites using WordPress and Elementor. Custom designs tailored to each business’s needs, ensuring a smooth user experience. My goal is to build websites that not only look great but also convert visitors into customers.
+			</ItemSkill>
+			<ItemSkill label="Social Media Advertising (SMA)" type='social_media'>
+				I manage campaigns on Facebook Ads, Instagram Ads, LinkedIn Ads, and TikTok Ads to reach specific audiences. I design strategies that maximize return on investment (ROI) and generate high-quality leads. My focus is on optimizing each campaign to achieve measurable results.
+			</ItemSkill>
+			<ItemSkill label="SEO (Search Engine Optimization)" type='SEO'>
+				I specialize in on-page and off-page SEO strategies to improve rankings on Google and other search engines. I optimize content, website structure, and keywords to increase organic visibility. My goal is to attract qualified traffic and enhance the digital presence of brands.
+			</ItemSkill>
+			<ItemSkill label="SEM (Search Engine Marketing)" type='marketing_ia'>
+				I design effective campaigns on Google Ads and Bing Ads to improve brand visibility in digital environments. My focus is on generating qualified traffic and increasing conversions through targeted ads. I continuously optimize campaigns to maximize return on investment.
+			</ItemSkill>
+			<ItemSkill label="Data Analysis (Data Analytics)" type='marketing_ia'>
+				I collect and analyze data to make strategic decisions that drive brand growth. I use tools like Google Analytics to identify improvement opportunities and optimize campaign performance. My approach is to transform data into valuable insights for measurable results.
+			</ItemSkill>
+			<ItemSkill label="Email Marketing" type='email_marketing'>
+				I design and implement email marketing strategies to effectively connect with audiences. I use automation tools to segment contacts, create personalized campaigns, and optimize open and conversion rates. My goal is to build lasting relationships with customers through relevant messages that make an impact.
+			</ItemSkill>
+		</Column>
+			<Subtitle>My marketing toolbox </Subtitle>
+			<Divider />
+		<Column>
+			<ToolboxList />
+		</Column>
+		<Column align="center">
+			<CustomButton link="/certifications">See my certifications</CustomButton>
 		</Column>
 	</Container>
 
@@ -65,6 +105,9 @@ import TrustedCompanies from '../views/companies/TrustedCompanies.astro';
 			<Title>My work experience</Title>
 			<Subtitle>The last companies i have worked</Subtitle>
 			<Divider />
+		</Column>
+		<Column align="center">
+			<CustomButton link="https://robertriera.com/wp-content/uploads/2024/03/Robert-Riera-HV.pdf">Download Curriculum</CustomButton>
 		</Column>
 	</Container>
 
@@ -76,5 +119,26 @@ import TrustedCompanies from '../views/companies/TrustedCompanies.astro';
 		</Column>
 	</Container>
 
-	<TrustedCompanies />
+	<Container columns={1}>
+		<Column>
+			<Title>Trusted by leading companies</Title>
+			<Subtitle>Proud to have worked with them</Subtitle>
+			<Divider />
+			<TrustedCompanies />
+		</Column>
+	</Container>
+
+	<Container columns={2}>
+		<Column>
+			<Title>Let’s work together</Title>
+			<Divider />
+			<Text>
+				Fill out the form, and let’s start working together! I’m always excited to collaborate on new projects and build strong business relationships.  Let’s make great things happen!
+			</Text>
+			<CustomButton link="https://robertriera.com/wp-content/uploads/2024/03/Robert-Riera-HV.pdf">Contact me</CustomButton>
+		</Column>
+		<Column>
+			<CustomImg src="/images/robert-in-computer-desktop-4.png" visible="desktop" width="90%" />
+		</Column>
+	</Container>
 </Layout>

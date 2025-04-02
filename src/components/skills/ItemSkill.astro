@@ -1,0 +1,35 @@
+---
+import Divider from "../basics/Divider.astro"
+import Text from "../basics/Text.astro"
+import IconSkills from './skillSvgs/IconSkills.tsx'
+
+const { label, type } = Astro.props
+---
+
+<section class="item-skill">
+    <div class="item-skill_label">
+         <IconSkills client:load iconType={type} /> 
+         <h3>{label}</h3>
+    </div>
+    <Divider />
+    <Text>
+        <slot />
+    </Text>
+</section>
+
+<style>
+
+    .item-skill{
+        margin-bottom: 16px;
+    }
+    .item-skill .item-skill_label{
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        color: var(--primary-white);
+    }
+    .item-skill h3{
+        display: inline-block;
+        color: var(--primary-white);
+    }
+</style>

@@ -1,0 +1,60 @@
+---
+import IconToolbox from "./IconToolbox";
+
+const { percentage, type } = Astro.props;
+---
+
+<section class="toolbox-item">
+    <div class="icon-container">
+        <IconToolbox iconType={type} client:load />
+    </div>
+
+    <p class="toolbox-item__text">
+        <slot />
+    </p>
+    <p class="toolbox-item__percentage">
+        {percentage}
+    </p>
+</section>
+
+<style>
+    .toolbox-item {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 170px;
+        padding: 8px;
+        gap: 16px;
+        border-radius: 4px;
+        background-color: var(--secondary-green);
+    }
+
+    .toolbox-item .icon-container {
+        display: flex;
+        justify-content: center;
+    }
+
+    .toolbox-item p {
+        text-align: center;
+        margin: 0;
+    }
+
+    .toolbox-item__text {
+        font-size: 16px;
+    }
+
+    .toolbox-item__percentage {
+        font-size: 24px;
+        font-weight: 500;
+    }
+
+    @media (min-width: 768px) {
+        .toolbox-item__text {
+            font-size: 20px;
+        }
+        .toolbox-item__percentage {
+            font-size: 32px;
+            font-weight: 600;
+        }
+    }
+</style>
