@@ -1,6 +1,14 @@
 ---
+import Container from '../components/basics/Container.astro';
 import Layout from '../layouts/Layout.astro';
-import ComingSoon from '../views/ComingSoon.astro';
+import Column from '../components/basics/Column.astro';
+import Title from '../components/basics/Title.astro';
+import MainTitle from '../components/basics/MainTitle.astro'
+import Divider from '../components/basics/Divider.astro';
+import Subtitle from '../components/basics/Subtitle.astro';
+import Text from '../components/basics/Text.astro';
+import CustomImg from '../components/basics/CustomImg.astro';
+import CustomButton from '../components/basics/CustomButton.astro';
 import TrustedCompanies from '../views/companies/TrustedCompanies.astro';
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
@@ -8,5 +16,65 @@ import TrustedCompanies from '../views/companies/TrustedCompanies.astro';
 ---
 
 <Layout>
-	<ComingSoon />
+	<Container columns={2}>
+		<Column>
+			<CustomImg src="/images/robert-banner-mobile.png" visible="mobile" width="100%" />
+			<MainTitle>Robert Riera</MainTitle>
+			<Subtitle>Chief Marketing officer</Subtitle>
+			<Divider />
+			<Text>
+				Specialist in Digital Marketing and Growth Strategies. I am known for turning strangers into potential clients through digital marketing strategies, SEO, and social media advertising. My approach is based on focus, discipline, and ambition, creating solutions that generate real and measurable results.
+			</Text>
+			<CustomButton link='https://robertriera.com/wp-content/uploads/2024/03/Robert-Riera-HV.pdf'>
+				Watch my CV
+			</CustomButton>
+		</Column>
+		<Column>
+			<CustomImg src="/images/robert-banner.png" visible="desktop" width="100%" />
+		</Column>
+	</Container>
+
+	<Container columns={2}>
+		<Column>
+			<Title>About me</Title>
+			<Subtitle>Why am I the missing gear your company needs?</Subtitle>
+			<Divider />
+			<CustomImg src="/images/robert-in-computer.png" visible="mobile" width="100%" />
+			<Text>
+				I get deeply involved in every project as if it were my own. My commitment goes beyond just completing tasks: I aim for every action to have a direct impact on the growth of your business. I apply a strategic, creative, and results-driven approach. I give 120% in everything I do because I know the small details make all the difference. 
+			</Text>
+			<Text>
+				If you’re looking for someone who transforms ideas into concrete results, who thinks, analyzes, and provides solutions that truly add value, I am the key piece your company needs to move forward.
+			</Text>
+		</Column>
+		<Column>
+			<CustomImg src="/images/robert-in-computer-desktop.png" visible="desktop" width="80%%" />
+		</Column>
+	</Container>
+
+	<Container columns={1} id="skills">
+		<Column>
+			<Title>My skills</Title>
+			<Subtitle>My Strongest habilities</Subtitle>
+			<Divider />
+		</Column>
+	</Container>
+
+	<Container columns={1} id="experience">
+		<Column>
+			<Title>My work experience</Title>
+			<Subtitle>The last companies i have worked</Subtitle>
+			<Divider />
+		</Column>
+	</Container>
+
+	<Container columns={1}>
+		<Column>
+			<Title>Testimonials</Title>
+			<Subtitle>Reviews of my partners</Subtitle>
+			<Divider />
+		</Column>
+	</Container>
+
+	<TrustedCompanies />
 </Layout>
