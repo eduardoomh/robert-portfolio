@@ -2,6 +2,7 @@
 import HeaderDesktop from "../layout/HeaderDesktop.astro";
 import HeaderMobile from "../layout/HeaderMobile.astro";
 import "@fontsource/rubik";
+import ScrollToTopButton from "../layout/ScrollButton/ScrollToTopButton";
 ---
 
 <!doctype html>
@@ -59,6 +60,7 @@ import "@fontsource/rubik";
 	<body>
 		<HeaderDesktop />
 		<HeaderMobile />
+		<ScrollToTopButton client:load />
 		<slot />
 	</body>
 </html>

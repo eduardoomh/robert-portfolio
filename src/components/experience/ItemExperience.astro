@@ -1,0 +1,72 @@
+---
+import Divider from "../basics/Divider.astro";
+import Text from "../basics/Text.astro";
+
+interface props {
+    label: string;
+    period: string;
+    company: string;
+}
+const { label, period, company } = Astro.props;
+---
+
+<section class="experience-item">
+    <div class="experience-item__line">
+        <svg
+            width="46"
+            height="200"
+            viewBox="0 0 46 200"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+        >
+            <g clip-path="url(#clip0_38_1745)">
+                <line
+                    x1="23.5"
+                    y1="220"
+                    x2="23.5"
+                    y2="10.4007"
+                    stroke="#C0FF81"
+                    stroke-width="5"></line>
+                <ellipse
+                    cx="23"
+                    cy="13.1119"
+                    rx="12.5"
+                    ry="12.6119"
+                    fill="#C0FF81"></ellipse>
+            </g>
+            <defs>
+                <clipPath id="clip0_38_1745">
+                    <rect
+                        width="45"
+                        height="200"
+                        fill="white"
+                        transform="translate(0.5 0.5)"></rect>
+                </clipPath>
+            </defs>
+        </svg>
+    </div>
+
+    <div class="experience-item__content">
+        <h3>{label}</h3>
+        <Divider />
+        <p class="experience-item__content__period">{period}</p>
+        <Text>{company}</Text>
+    </div>
+</section>
+
+<style>
+    .experience-item {
+        display: grid;
+        grid-template-columns: 5rem 1fr;
+        grid-template-rows: 1fr;
+        color: var(--primary-white);
+    }
+
+    .experience-item__content h3{
+        margin-top: 0;
+    }
+
+    .experience-item_content__period {
+        font-size: 14px;
+    }
+</style>

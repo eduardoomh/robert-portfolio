@@ -38,6 +38,12 @@ const { src, visible, width } = Astro.props;
     transform: translateY(0);
     filter: blur(0);
   }
+
+  /* Efecto al hacer hover sobre la imagen con una inclinación más suave y tiempo de animación reducido */
+  .image-transition:hover {
+    transform: translateY(0) rotate(2deg); /* Rota la imagen 2 grados */
+    transition: transform 0.15s ease-out; /* Transición rápida de la inclinación */
+  }
 </style>
 
 <script>

@@ -12,6 +12,8 @@ import CustomButton from '../components/basics/CustomButton.astro';
 import TrustedCompanies from '../views/companies/TrustedCompanies.astro';
 import ItemSkill from '../components/skills/ItemSkill.astro';
 import ToolboxList from '../views/toolbox/ToolboxList.astro';
+import Experience from '../views/experience/Experience.astro';
+import Form from '../components/contact/Form';
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
@@ -27,7 +29,9 @@ import ToolboxList from '../views/toolbox/ToolboxList.astro';
 			<Text>
 				Specialist in Digital Marketing and Growth Strategies. I am known for turning strangers into potential clients through digital marketing strategies, SEO, and social media advertising. My approach is based on focus, discipline, and ambition, creating solutions that generate real and measurable results.
 			</Text>
-			<CustomButton link='https://robertriera.com/wp-content/uploads/2024/03/Robert-Riera-HV.pdf'>
+			<CustomButton 
+				link='https://robertriera.com/wp-content/uploads/2024/03/Robert-Riera-HV.pdf'
+				type="CV">
 				Watch my CV
 			</CustomButton>
 		</Column>
@@ -96,7 +100,11 @@ import ToolboxList from '../views/toolbox/ToolboxList.astro';
 			<ToolboxList />
 		</Column>
 		<Column align="center">
-			<CustomButton link="/certifications">See my certifications</CustomButton>
+			<CustomButton 
+				link="/certifications"
+				type="regular">
+				See my certifications
+			</CustomButton>
 		</Column>
 	</Container>
 
@@ -105,9 +113,14 @@ import ToolboxList from '../views/toolbox/ToolboxList.astro';
 			<Title>My work experience</Title>
 			<Subtitle>The last companies i have worked</Subtitle>
 			<Divider />
+			<Experience />
 		</Column>
 		<Column align="center">
-			<CustomButton link="https://robertriera.com/wp-content/uploads/2024/03/Robert-Riera-HV.pdf">Download Curriculum</CustomButton>
+			<CustomButton 
+				link="https://robertriera.com/wp-content/uploads/2024/03/Robert-Riera-HV.pdf"
+				type="CV"
+				>Download Curriculum
+			</CustomButton>
 		</Column>
 	</Container>
 
@@ -128,17 +141,26 @@ import ToolboxList from '../views/toolbox/ToolboxList.astro';
 		</Column>
 	</Container>
 
-	<Container columns={2}>
+	<Container columns={2} id="contact">
 		<Column>
+			<br/>
+			<CustomImg src="/images/work-together-mobile.png" visible="mobile" width="100%" />
+			<br/>
 			<Title>Let’s work together</Title>
 			<Divider />
 			<Text>
 				Fill out the form, and let’s start working together! I’m always excited to collaborate on new projects and build strong business relationships.  Let’s make great things happen!
 			</Text>
-			<CustomButton link="https://robertriera.com/wp-content/uploads/2024/03/Robert-Riera-HV.pdf">Contact me</CustomButton>
+			<Form client:load />
+			<CustomButton 
+				link="https://robertriera.com/wp-content/uploads/2024/03/Robert-Riera-HV.pdf"
+				type="send"
+			>
+				Contact me
+			</CustomButton>
 		</Column>
 		<Column>
-			<CustomImg src="/images/robert-in-computer-desktop-4.png" visible="desktop" width="90%" />
+			<CustomImg src="/images/work-together.png" visible="desktop" width="90%" />
 		</Column>
 	</Container>
 </Layout>

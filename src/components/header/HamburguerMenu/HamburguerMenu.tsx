@@ -33,10 +33,10 @@ export default function HamburgerMenu() {
             }
             <div className={isOpen ? `${styles.bottomSheet} ${styles.bottomSheetOpen}` : styles.bottomSheet}>
                 <ul className={styles.menuOptions}>
-                    <li>Home</li>
-                    <li>Experience</li>
-                    <li>Skills</li>
-                    <li>Contact</li>
+                    <li><a href='/'>Home</a></li>
+                    <li><a href='/#experience'>Experience</a></li>
+                    <li><a href='/#skills'>Skills</a></li>
+                    <li><a href='/#contact'>Contact</a></li>
                 </ul>
                 <SocialIcons />
             </div>

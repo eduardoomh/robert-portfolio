@@ -69,6 +69,11 @@
     background: #333;
 }
 
+.menuOptions li a{
+    color: inherit;
+    text-decoration: none;
+}
+
 @media (min-width: 768px){
     .mobileMenu{
         display: none;
