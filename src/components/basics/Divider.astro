@@ -1,25 +1,25 @@
-<div class="divider animate-fade-in "></div>
+<div class="divider animate-fade-in"></div>
 
 <style>
-    .divider {
-        width: 95%;
-        height: 1px; /* Grosor de la línea */
-        background-color: var(--secondary-green);
-        margin: 16px 0; /* Espaciado arriba y abajo */
+  .divider {
+    width: 95%;
+    height: 1px; /* Grosor de la línea */
+    background-color: var(--secondary-green);
+    margin: 16px 0; /* Espaciado arriba y abajo */
 
-
-        @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(30px);
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
-    to {
-      opacity: 1;
-      transform: translateY(0);
+
+    .animate-fade-in {
+      animation: fadeIn 0.8s ease-out;
     }
   }
-
-  .animate-fade-in {
-    animation: fadeIn 0.8s ease-out;
-  }}
 </style>

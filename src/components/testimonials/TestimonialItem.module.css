@@ -1,6 +1,7 @@
 
 .testimonialCard{
     color: var(--primary-white);
+    height: 20rem;
 }
 
 .testimonialCard .UserInfo{
@@ -10,7 +11,34 @@
 
 }
 
-.UserInfo .profileData{
+.profileData{
     display: flex;
     flex-direction: column;
+    gap: 8px;
+    padding-top: 4px;
 }
+
+.profileData h3{
+    margin: 0;
+     margin-left: 8px;
+}
+
+.dividerTestimonial{
+    width: 95%;
+    height: 1px; /* Grosor de la línea */
+    background-color: var(--secondary-green);
+    margin: 16px 0;
+}
+
+.imgContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (min-width: 768px) {
+
+    .testimonialCard{
+        height: 12rem;
+    }
+  }
