@@ -14,6 +14,7 @@ import ItemSkill from '../components/skills/ItemSkill.astro';
 import ToolboxList from '../views/toolbox/ToolboxList.astro';
 import Experience from '../views/experience/Experience.astro';
 import Form from '../components/contact/Form';
+import TestimonialList from '../views/testimonials/TestimonialList';
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
@@ -129,6 +130,7 @@ import Form from '../components/contact/Form';
 			<Title>Testimonials</Title>
 			<Subtitle>Reviews of my partners</Subtitle>
 			<Divider />
+			<TestimonialList client:load />
 		</Column>
 	</Container>
 
@@ -144,7 +146,7 @@ import Form from '../components/contact/Form';
 	<Container columns={2} id="contact">
 		<Column>
 			<br/>
-			<CustomImg src="/images/work-together-mobile.png" visible="mobile" width="100%" />
+			<CustomImg src="/images/work-together-mobile-version.png" visible="mobile" width="100%" />
 			<br/>
 			<Title>Let’s work together</Title>
 			<Divider />

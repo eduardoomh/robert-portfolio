@@ -30,7 +30,7 @@ export default function ScrollToTopButton() {
       className={`${styles.scrollToTop} ${isVisible ? styles.show : ''}`}
       onClick={scrollToTop}
     >
-      <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg width="50%" height="50%" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M12.3334 5.43737V21.6667H9.66673V5.43737L2.51473 12.5894L0.629395 10.704L11.0001 0.333374L21.3707 10.704L19.4854 12.5894L12.3334 5.43737Z" fill="#001018" />
       </svg>
 
