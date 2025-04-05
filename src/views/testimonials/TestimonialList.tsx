@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import TestimonialItem from '../../components/testimonials/TestimonialItem';
 import styles from './TestimonialList.module.css';
 
@@ -36,45 +35,20 @@ const testimonials = [
 ];
 
 export default function TestimonialSlider() {
-  const [currentTestimonial, setCurrentTestimonial] = useState(0);
-  const [fade, setFade] = useState(false);
-
-  const nextTestimonial = () => {
-    setFade(true);
-    setTimeout(() => {
-      setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
-      setFade(false);
-    }, 300); // Duration of the fade transition (match it with the CSS)
-  };
-
-  const prevTestimonial = () => {
-    setFade(true);
-    setTimeout(() => {
-      setCurrentTestimonial((prev) => (prev - 1 + testimonials.length) % testimonials.length);
-      setFade(false);
-    }, 300); // Duration of the fade transition (match it with the CSS)
-  };
+  const intinityTestimonials = [...testimonials, ...testimonials]
 
   return (
     <div className={styles.testimonialSlider}>
-      <div className={`${styles.testimonialContainer} ${fade ? styles.fade : ''}`}>
-        <TestimonialItem user={testimonials[currentTestimonial].user} image={testimonials[currentTestimonial].image}>
-          {testimonials[currentTestimonial].text}
-        </TestimonialItem>
+      <div className={`${styles.testimonialContainer}`}>
+        {
+          intinityTestimonials.map(item => (
+            <TestimonialItem user={item.user} image={item.image}>
+              {item.text}
+            </TestimonialItem>
+          ))
+        }
       </div>
-      <div className={styles.navigation}>
-        <button onClick={prevTestimonial} className={styles.navButton}>
-          <svg width="12" height="18" viewBox="0 0 12 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M4.5853 9.00002L11.1853 15.6L9.29997 17.4854L0.814637 9.00002L9.29997 0.514685L11.1853 2.40002L4.5853 9.00002Z" fill="#C0FF81" />
-          </svg>
-        </button>
-        <span>{currentTestimonial + 1} / 6</span>
-        <button onClick={nextTestimonial} className={styles.navButton}>
-          <svg width="12" height="18" viewBox="0 0 12 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M7.4147 8.99998L0.814697 2.39998L2.70003 0.514648L11.1854 8.99998L2.70003 17.4853L0.814697 15.6L7.4147 8.99998Z" fill="#C0FF81" />
-          </svg>
-        </button>
-      </div>
+
     </div>
   );
 }

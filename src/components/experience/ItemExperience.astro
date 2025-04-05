@@ -62,6 +62,10 @@ const { label, period, company } = Astro.props;
         color: var(--primary-white);
     }
 
+    .experience-item__content{
+        transition: all 0.2s ease-in;
+    }
+
     .experience-item__content h3{
         margin-top: 0;
     }
@@ -69,4 +73,8 @@ const { label, period, company } = Astro.props;
     .experience-item_content__period {
         font-size: 14px;
     }
+    .experience-item__content:hover {
+    transform: scale(1.02);
+    }
+
 </style>

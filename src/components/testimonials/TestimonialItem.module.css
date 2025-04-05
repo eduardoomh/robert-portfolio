@@ -2,6 +2,8 @@
 .testimonialCard{
     color: var(--primary-white);
     height: 20rem;
+    min-width: 90vw;
+    margin-right: 24px;
 }
 
 .testimonialCard .UserInfo{
@@ -40,5 +42,7 @@
 
     .testimonialCard{
         height: 12rem;
+        min-width: 600px;
+        margin-right: 24px;
     }
   }
