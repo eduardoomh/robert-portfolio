@@ -1,12 +1,14 @@
 ---
 interface props {
   align?: string;
+  verticalAlign?: string;
+  id?: string;
 }
 
-const { align } = Astro.props;
+const { align, id, verticalAlign } = Astro.props;
 ---
 
-<div class={`column ${align}`}>
+<div id={id} class={`column ${align} ${verticalAlign}`}>
   <slot />
 </div>
 
@@ -27,5 +29,9 @@ const { align } = Astro.props;
 
   .flex-end{
     align-items: flex-end;
+  }
+
+  .vertical-center{
+    justify-content: center;
   }
 </style>

@@ -1,8 +1,123 @@
 ---
-import Layout from "../../layouts/Layout.astro"
-import ComingSoon from "../../views/ComingSoon.astro"
+import Column from "../../components/basics/Column.astro";
+import Container from "../../components/basics/Container.astro";
+import CustomButton from "../../components/basics/CustomButton.astro";
+import CustomImg from "../../components/basics/CustomImg.astro";
+import Divider from "../../components/basics/Divider.astro";
+import MainTitle from "../../components/basics/MainTitle.astro";
+import Subtitle from "../../components/basics/Subtitle.astro";
+import Layout from "../../layouts/Layout.astro";
+import Text from "../../components/basics/Text.astro";
+import Title from "../../components/basics/Title.astro";
+import ItemExperience from "../../components/experience/ItemExperience.astro";
+import LetsWorkTogether from "../../views/contact/LetsWorkTogether.astro";
+import TrustedCompanies from "../../views/companies/TrustedCompanies.astro";
 ---
 
 <Layout>
-    <ComingSoon />
+    <man view-transition-name="page">
+        <Container columns={2}>
+            <Column>
+                <CustomImg
+                    src="/images/robert-banner-mobile.png"
+                    visible="mobile"
+                    width="100%"
+                />
+                <MainTitle>Drenvio</MainTitle>
+                <Subtitle
+                    >Logistics and national/international shipping company.</Subtitle
+                >
+                <Divider />
+                <Text>
+                    We are a logistics and shipping company focused on national
+                    and international deliveries. Our main marketing challenge
+                    is increasing visibility in a competitive market. We need to
+                    improve brand awareness, strengthen our digital presence,
+                    and better communicate our value to reach new customers,
+                    especially in international regions.
+                </Text>
+                <CustomButton link="https://drenvio.com" type="regular">
+                    Website
+                </CustomButton>
+            </Column>
+            <Column verticalAlign="vertical-center">
+                <CustomImg
+                    src="/images/companies/drenvio-company-drenvio-desktop.png"
+                    visible="desktop"
+                    width="90%"
+                />
+            </Column>
+        </Container>
+        <Container columns={1} id="experience">
+            <Column>
+                <Title>My work experience</Title>
+                <Subtitle>My experience in Drenvio company</Subtitle>
+                <Divider />
+                <br />
+                <br />
+                <ItemExperience
+                    label="Digital Marketing Manager"
+                    period="March 2022 - December 2023"
+                    company="DrEnvío - México"
+                />
+            </Column>
+            <Column align="center">
+                <CustomButton
+                    link="http://robertriera.com/wp-content/uploads/2025/04/Robert-Riera-CV-English-Version.pdf"
+                    type="CV"
+                    >Download Curriculum
+                </CustomButton>
+            </Column>
+        </Container>
+        <Container columns={2}>
+            <Column>
+                <Title>My work details</Title>
+                <Subtitle>Achievements during my time at Drenvio</Subtitle>
+                <Divider />
+                <CustomImg
+                    src="/images/robert-in-computer.png"
+                    visible="mobile"
+                    width="100%"
+                />
+                <Text>
+                    I led digital marketing strategies that drove traffic and
+                    customer acquisition, optimized conversion funnels, and
+                    executed high-performing multichannel campaigns
+                </Text>
+                <Text>
+                    I also leveraged data analytics to continuously refine
+                    campaign performance, identify growth opportunities, and
+                    improve ROI. My approach combined creativity with a
+                    data-driven mindset to deliver measurable results across
+                    various digital platforms.
+                </Text>
+            </Column>
+            <Column>
+                <CustomImg
+                    src="/images/work-experience-desktop.png"
+                    visible="desktop"
+                    width="80%"
+                />
+            </Column>
+        </Container>
+        <TrustedCompanies exclude="Drenvio" />
+        <LetsWorkTogether />
+    </man>
 </Layout>
+
+<style>
+    /* Puedes agregarlo a tu archivo CSS global o en un archivo de estilos de la página */
+    ::view-transition-old(page),
+    ::view-transition-new(page) {
+        animation: fade 0.5s ease;
+    }
+
+    @keyframes fade {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+</style>

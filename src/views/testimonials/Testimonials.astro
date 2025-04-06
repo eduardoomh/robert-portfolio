@@ -4,20 +4,14 @@ import Container from "../../components/basics/Container.astro";
 import Divider from "../../components/basics/Divider.astro";
 import Subtitle from "../../components/basics/Subtitle.astro";
 import Title from "../../components/basics/Title.astro";
-import CompaniesList from "../../components/trustedCompanies/CompaniesList";
-
-interface props{
-    exclude?: string
-}
-
-const {exclude} = Astro.props
+import TestimonialList from "./TestimonialList";
 ---
 
-<Container columns={1}>
+<Container columns={1} id='testimonials'>
     <Column>
-        <Title>Trusted by leading companies</Title>
-        <Subtitle>Proud to have worked with them</Subtitle>
+        <Title>Testimonials</Title>
+        <Subtitle>Reviews of my partners</Subtitle>
         <Divider />
-        <CompaniesList client:load exclude={exclude} />
+        <TestimonialList client:load />
     </Column>
 </Container>

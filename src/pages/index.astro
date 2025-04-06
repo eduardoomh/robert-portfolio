@@ -1,20 +1,20 @@
 ---
-import Container from '../components/basics/Container.astro';
-import Layout from '../layouts/Layout.astro';
-import Column from '../components/basics/Column.astro';
-import Title from '../components/basics/Title.astro';
-import MainTitle from '../components/basics/MainTitle.astro'
-import Divider from '../components/basics/Divider.astro';
-import Subtitle from '../components/basics/Subtitle.astro';
-import Text from '../components/basics/Text.astro';
-import CustomImg from '../components/basics/CustomImg.astro';
-import CustomButton from '../components/basics/CustomButton.astro';
-import ToolboxList from '../views/toolbox/ToolboxList.astro';
-import Experience from '../views/experience/Experience.astro';
-import Form from '../components/contact/Form';
-import TestimonialList from '../views/testimonials/TestimonialList';
-import SkillList from '../views/skills/SkillList.astro';
-import CompaniesList from '../components/trustedCompanies/CompaniesList';
+import Container from "../components/basics/Container.astro";
+import Layout from "../layouts/Layout.astro";
+import Column from "../components/basics/Column.astro";
+import Title from "../components/basics/Title.astro";
+import MainTitle from "../components/basics/MainTitle.astro";
+import Divider from "../components/basics/Divider.astro";
+import Subtitle from "../components/basics/Subtitle.astro";
+import Text from "../components/basics/Text.astro";
+import CustomImg from "../components/basics/CustomImg.astro";
+import CustomButton from "../components/basics/CustomButton.astro";
+import ToolboxList from "../views/toolbox/ToolboxList.astro";
+import Experience from "../views/experience/Experience.astro";
+import SkillList from "../views/skills/SkillList.astro";
+import LetsWorkTogether from "../views/contact/LetsWorkTogether.astro";
+import Testimonials from "../views/testimonials/Testimonials.astro";
+import TrustedCompanies from "../views/companies/TrustedCompanies.astro";
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
@@ -23,21 +23,34 @@ import CompaniesList from '../components/trustedCompanies/CompaniesList';
 <Layout>
 	<Container columns={2}>
 		<Column>
-			<CustomImg src="/images/robert-banner-mobile.png" visible="mobile" width="100%" />
+			<CustomImg
+				src="/images/robert-banner-mobile.png"
+				visible="mobile"
+				width="100%"
+			/>
 			<MainTitle>Robert Riera</MainTitle>
 			<Subtitle>Chief Marketing officer</Subtitle>
 			<Divider />
 			<Text>
-				Specialist in Digital Marketing and Growth Strategies. I am known for turning strangers into potential clients through digital marketing strategies, SEO, and social media advertising. My approach is based on focus, discipline, and ambition, creating solutions that generate real and measurable results.
+				Specialist in Digital Marketing and Growth Strategies. I am
+				known for turning strangers into potential clients through
+				digital marketing strategies, SEO, and social media advertising.
+				My approach is based on focus, discipline, and ambition,
+				creating solutions that generate real and measurable results.
 			</Text>
-			<CustomButton 
-				link='http://robertriera.com/wp-content/uploads/2025/04/Robert-Riera-CV-English-Version.pdf'
-				type="CV">
+			<CustomButton
+				link="http://robertriera.com/wp-content/uploads/2025/04/Robert-Riera-CV-English-Version.pdf"
+				type="CV"
+			>
 				Watch my CV
 			</CustomButton>
 		</Column>
 		<Column>
-			<CustomImg src="/images/robert-banner.png" visible="desktop" width="100%" />
+			<CustomImg
+				src="/images/robert-banner.png"
+				visible="desktop"
+				width="100%"
+			/>
 		</Column>
 	</Container>
 
@@ -46,16 +59,32 @@ import CompaniesList from '../components/trustedCompanies/CompaniesList';
 			<Title>About me</Title>
 			<Subtitle>Why am I the missing gear your company needs?</Subtitle>
 			<Divider />
-			<CustomImg src="/images/robert-in-computer.png" visible="mobile" width="100%" />
+			<CustomImg
+				src="/images/robert-in-computer.png"
+				visible="mobile"
+				width="100%"
+			/>
 			<Text>
-				I get deeply involved in every project as if it were my own. My commitment goes beyond just completing tasks: I aim for every action to have a direct impact on the growth of your business. I apply a strategic, creative, and results-driven approach. I give 120% in everything I do because I know the small details make all the difference. 
+				I get deeply involved in every project as if it were my own. My
+				commitment goes beyond just completing tasks: I aim for every
+				action to have a direct impact on the growth of your business. I
+				apply a strategic, creative, and results-driven approach. I give
+				120% in everything I do because I know the small details make
+				all the difference.
 			</Text>
 			<Text>
-				If you’re looking for someone who transforms ideas into concrete results, who thinks, analyzes, and provides solutions that truly add value, I am the key piece your company needs to move forward.
+				If you’re looking for someone who transforms ideas into concrete
+				results, who thinks, analyzes, and provides solutions that truly
+				add value, I am the key piece your company needs to move
+				forward.
 			</Text>
 		</Column>
 		<Column>
-			<CustomImg src="/images/robert-in-computer-desktop-4.png" visible="desktop" width="90%" />
+			<CustomImg
+				src="/images/robert-in-computer-desktop-4.png"
+				visible="desktop"
+				width="90%"
+			/>
 		</Column>
 	</Container>
 
@@ -64,20 +93,21 @@ import CompaniesList from '../components/trustedCompanies/CompaniesList';
 			<Title>My skills</Title>
 			<Subtitle>My Strongest habilities</Subtitle>
 			<Divider />
-			<CustomImg src='/images/skills-banner.png' visible="desktop" />
-			<CustomImg src='/images/skills-banner-mobile.png' visible="mobile" />
-			<br/>
+			<CustomImg src="/images/skills-banner.png" visible="desktop" />
+			<CustomImg
+				src="/images/skills-banner-mobile.png"
+				visible="mobile"
+			/>
+			<br />
 			<SkillList />
 		</Column>
+		<Column id="toolbox">
 			<Subtitle>My marketing toolbox </Subtitle>
 			<Divider />
-		<Column>
 			<ToolboxList />
 		</Column>
 		<Column align="center">
-			<CustomButton 
-				link="/certifications"
-				type="regular">
+			<CustomButton link="/certifications" type="regular">
 				See my certifications
 			</CustomButton>
 		</Column>
@@ -91,7 +121,7 @@ import CompaniesList from '../components/trustedCompanies/CompaniesList';
 			<Experience />
 		</Column>
 		<Column align="center">
-			<CustomButton 
+			<CustomButton
 				link="http://robertriera.com/wp-content/uploads/2025/04/Robert-Riera-CV-English-Version.pdf"
 				type="CV"
 				>Download Curriculum
@@ -99,44 +129,7 @@ import CompaniesList from '../components/trustedCompanies/CompaniesList';
 		</Column>
 	</Container>
 
-	<Container columns={1}>
-		<Column>
-			<Title>Testimonials</Title>
-			<Subtitle>Reviews of my partners</Subtitle>
-			<Divider />
-			<TestimonialList client:load />
-		</Column>
-	</Container>
-
-	<Container columns={1}>
-		<Column>
-			<Title>Trusted by leading companies</Title>
-			<Subtitle>Proud to have worked with them</Subtitle>
-			<Divider />
-			<CompaniesList client:load />
-		</Column>
-	</Container>
-
-	<Container columns={2} id="contact">
-		<Column>
-			<br/>
-			<CustomImg src="/images/work-together-mobile-version.png" visible="mobile" width="100%" />
-			<br/>
-			<Title>Let’s work together</Title>
-			<Divider />
-			<Text>
-				Fill out the form, and let’s start working together! I’m always excited to collaborate on new projects and build strong business relationships.  Let’s make great things happen!
-			</Text>
-			<Form client:load />
-			<CustomButton 
-				link="http://robertriera.com/wp-content/uploads/2025/04/Robert-Riera-CV-English-Version.pdf"
-				type="send"
-			>
-				Contact me
-			</CustomButton>
-		</Column>
-		<Column>
-			<CustomImg src="/images/work-together.png" visible="desktop" width="90%" />
-		</Column>
-	</Container>
+	<Testimonials />
+	<TrustedCompanies />
+	<LetsWorkTogether />
 </Layout>

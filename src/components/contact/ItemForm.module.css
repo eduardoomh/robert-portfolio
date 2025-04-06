@@ -19,7 +19,8 @@
 }
 
 .itemForm textarea{
-    height: 28px;
+    height: 48px;
     padding: 4px 8px;
     font-size: 16px;
+    font-family: var( --primary-font);
 }
