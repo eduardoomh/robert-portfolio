@@ -1,0 +1,125 @@
+---
+import Divider from "../components/basics/Divider.astro";
+import Subtitle from "../components/basics/Subtitle.astro";
+import Socialicons from "../components/header/social-icons/Socialicons.astro";
+---
+
+<footer class="footer-layout">
+    <div class="footer-content">
+        <section class="footer-menu-sections">
+            <h3>Menu</h3>
+            <Divider />
+            <ul class="footer-menu-block">
+                <li><a href="/#about-me">About me</a></li>
+                <li><a href="/#experience">Work experience</a></li>
+                <li><a href="/#skills">Skills</a></li>
+                <li><a href="/#toolbox">Marketing toolbox</a></li>
+            </ul>
+        </section>
+        <section class="footer-menu-sections">
+            <h3>Projects</h3>
+            <Divider />
+            <ul class="footer-menu-block">
+                <li>
+                    <a href="/companies/vida-natural-plus">Vida natural plus</a>
+                </li>
+                <li><a href="/companies/all-inchess">All inchess</a></li>
+                <li><a href="/companies/drenvio">Drenvio</a></li>
+                <li><a href="/companies/ip-architechs">IP Architechs</a></li>
+                <li><a href="/companies/goairheads">Go Airheads</a></li>
+            </ul>
+        </section>
+        <section class="footer-menu-sections">
+            <h3>Other links</h3>
+            <Divider />
+            <ul class="footer-menu-block">
+                <li><a href="/privacy-policy">Privacy policy</a></li>
+                <li><a href="https://robertriera.com/blog">Blog</a></li>
+                <li><a href="/#testimonials">Testimonials</a></li>
+                <li><a href="/certifications">Certifications</a></li>
+                <li>
+                    <a
+                        href="http://robertriera.com/wp-content/uploads/2025/04/Robert-Riera-CV-English-Version.pdf"
+                        >Curriculum</a
+                    >
+                </li>
+            </ul>
+        </section>
+        <section class="footer-menu-sections">
+            <h3>Contact</h3>
+            <Divider />
+            <ul class="footer-menu-block">
+                <li>Robertriera@gmail.com</li>
+                <Socialicons align="flex-start" />
+            </ul>
+        </section>
+    </div>
+    <div class="footer-bottom">
+        <Divider />
+        <p>Robert Riera portfolio 2025.</p>
+    </div>
+</footer>
+
+<style>
+    .footer-layout {
+        padding: 64px 16px;
+    }
+
+    .footer-menu-block {
+        color: var(--primary-white);
+        list-style: none;
+        padding: 0;
+    }
+
+    .footer-menu-block li {
+        display: flex;
+        align-items: center;
+        height: 42px;
+        color: var(--primary-white);
+        cursor: pointer;
+    }
+
+    .footer-menu-block li a {
+        text-decoration-line: none;
+        color: inherit;
+        transition: color 0.2s ease-in-out;
+    }
+
+    .footer-menu-block li a:hover {
+        color: var(--secondary-green);
+        text-decoration-line: underline;
+    }
+
+    .footer-menu-sections {
+        margin-bottom: 3rem;
+        color: var(--primary-white);
+    }
+
+    .footer-bottom p {
+        text-align: center;
+        color: var(--primary-white);
+        margin-top: 2rem;
+    }
+
+    @media (min-width: 767px) {
+        .footer-layout {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .footer-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr;
+            grid-template-rows: 1fr;
+            gap: 3rem;
+            width: 100%;
+            max-width: 1150px;
+        }
+
+        .footer-bottom {
+            width: 100%;
+            max-width: 1150px;
+        }
+    }
+</style>
