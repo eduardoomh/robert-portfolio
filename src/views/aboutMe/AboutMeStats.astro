@@ -1,0 +1,72 @@
+<div class="about-me-stats">
+    <article class="stats-item">
+        <h3>+6</h3>
+        <span>Years of experience</span>
+    </article>
+
+    <article class="stats-item">
+        <h3>+30</h3>
+        <span>Satisfied clients</span>
+    </article>
+
+    <article class="stats-item">
+        <h3>+10</h3>
+        <span>Companies that have trusted me</span>
+    </article>
+
+    <article class="stats-item">
+        <h3>+30</h3>
+        <span>Projects completed</span>
+    </article>
+</div>
+
+<style>
+    .about-me-stats {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+    }
+
+    .stats-item {
+        padding: 12px;
+        border-radius: 4px;
+        background-color: var(--secondary-green);
+        color: var(--primary-dark);
+        transition: transform 0.3s ease;
+    }
+
+    .stats-item h3 {
+        padding: 0;
+        margin: 0;
+        font-size: 32px;
+    }
+
+    .stats-item span {
+        font-size: 16px;
+        padding-top: 16px;
+    }
+
+    .stats-item:hover {
+        transform: scale(1.05);
+        background: linear-gradient(135deg, #c6f696, #a0f341);
+        cursor: pointer;
+    }
+
+    @media (min-width: 1000px) {
+        .stats-item {
+            width: 90px;
+            height: 95px;
+        }
+        .about-me-stats {
+            display: flex;
+            gap: 16px;
+        }
+
+        .stats-item span {
+            font-size: 14px;
+            padding-top: 16px;
+        }
+    }
+
+</style>
