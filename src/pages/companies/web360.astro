@@ -1,8 +1,99 @@
 ---
+import Column from "../../components/basics/Column.astro";
+import Container from "../../components/basics/Container.astro";
+import CustomButton from "../../components/basics/CustomButton.astro";
+import CustomImg from "../../components/basics/CustomImg.astro";
+import Divider from "../../components/basics/Divider.astro";
+import MainTitle from "../../components/basics/MainTitle.astro";
+import Subtitle from "../../components/basics/Subtitle.astro";
 import Layout from "../../layouts/Layout.astro";
-import ComingSoon from "../../views/ComingSoon.astro";
+import Text from "../../components/basics/Text.astro";
+import Title from "../../components/basics/Title.astro";
+import ItemExperience from "../../components/experience/ItemExperience.astro";
+import LetsWorkTogether from "../../views/contact/LetsWorkTogether.astro";
+import TrustedCompanies from "../../views/companies/TrustedCompanies.astro";
+import CountryCompany from "../../views/companies/CountryCompany.astro";
 ---
 
 <Layout>
-    <ComingSoon />
+    <man view-transition-name="page">
+        <Container columns={2}>
+            <Column>
+                <CountryCompany label="Monterrey, México" country="MX" visible="mobile" />
+                <CustomImg
+                    src="/images/companies/mobile/web360-mobile.png"
+                    visible="mobile"
+                    width="100%"
+                />
+                <MainTitle>Web360 Agencia Digital</MainTitle>
+                <Subtitle>Creative marketing agency providing digital solutions.</Subtitle
+                >
+                <Divider />
+                <Text>
+                    Web360 Agencia Digital delivers tailored marketing strategies that combine creativity, technology, and data to help brands grow online. From branding and web development to social media and paid advertising, the agency focuses on measurable results and meaningful engagement across digital channels.
+                </Text>
+                <CustomButton link="https://web360.mx/" type="regular">
+                    Website
+                </CustomButton>
+            </Column>
+            <Column verticalAlign="vertical-center">
+                <CountryCompany label="Monterrey, México" country="MX" visible="desktop" />
+                <CustomImg
+                    src="/images/companies/web360-desktop.png"
+                    visible="desktop"
+                    width="90%"
+                />
+            </Column>
+        </Container>
+        <Container columns={1} id="experience">
+            <Column>
+                <Title>My work experience</Title>
+                <Subtitle>My experience in Web360 Agencia Digital</Subtitle>
+                <Divider />
+                <br />
+                <br />
+                <ItemExperience
+                    label="Digital Marketing Manager"
+                    period="May 2021 - March 2022"
+                    company="Web360 Agencia Digital - México"
+                />
+            </Column>
+            <Column align="center">
+                <CustomButton
+                    link="http://robertriera.com/wp-content/uploads/2025/04/Robert-Riera-CV-English-Version.pdf"
+                    type="CV"
+                    >Download Curriculum
+                </CustomButton>
+            </Column>
+        </Container>
+        <Container columns={2}>
+            <Column>
+                <Title>My work details</Title>
+                <Subtitle>Achievements during my time at Web360</Subtitle>
+                <Divider />
+                <CustomImg
+                    src="/images/my-work-experience-mobile.png"
+                    visible="mobile"
+                    width="100%"
+                />
+                <Text>
+                    I led digital marketing strategies that drove traffic and
+                    customer acquisition, optimized conversion funnels, and
+                    executed high-performing multichannel campaigns
+                </Text>
+                <Text>
+                    This includes managing paid media campaigns, analyzing performance metrics, and optimizing creatives and targeting to maximize ROI. I collaborate closely with design and content teams to ensure consistent messaging and impactful results across platforms.
+                </Text>
+            </Column>
+            <Column>
+                <CustomImg
+                    src="/images/work-experience-desktop.png"
+                    visible="desktop"
+                    width="80%"
+                />
+            </Column>
+        </Container>
+        <TrustedCompanies exclude="Web360 Agencia Digital" />
+        <LetsWorkTogether />
+    </man>
 </Layout>

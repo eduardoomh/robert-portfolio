@@ -1,8 +1,75 @@
 ---
+import Column from "../../components/basics/Column.astro";
+import Container from "../../components/basics/Container.astro";
+import CustomButton from "../../components/basics/CustomButton.astro";
+import CustomImg from "../../components/basics/CustomImg.astro";
+import Divider from "../../components/basics/Divider.astro";
+import MainTitle from "../../components/basics/MainTitle.astro";
+import Subtitle from "../../components/basics/Subtitle.astro";
 import Layout from "../../layouts/Layout.astro";
-import ComingSoon from "../../views/ComingSoon.astro";
+import Text from "../../components/basics/Text.astro";
+import Title from "../../components/basics/Title.astro";
+import LetsWorkTogether from "../../views/contact/LetsWorkTogether.astro";
+import TrustedCompanies from "../../views/companies/TrustedCompanies.astro";
+import CountryCompany from "../../views/companies/CountryCompany.astro";
 ---
 
 <Layout>
-    <ComingSoon />
+    <man view-transition-name="page">
+        <Container columns={2}>
+            <Column>
+                <CountryCompany label="México" country="MX" visible="mobile" />
+                <CustomImg
+                    src="/images/companies/mobile/all-inchess-mobile.png"
+                    visible="mobile"
+                    width="100%"
+                />
+                <MainTitle>All-Inchess</MainTitle>
+                <Subtitle>Online chess store and learning academy.</Subtitle
+                >
+                <Divider />
+                <Text>
+                    All Inchess is an online chess platform that combines a specialized e-commerce store with a comprehensive learning academy. It offers a wide range of chess products—from boards and accessories to books and digital tools—while also providing structured lessons, tutorials, and coaching services for players of all levels. The brand is committed to fostering a global chess community by making both quality equipment and expert education accessible online.
+                </Text>
+                <CustomButton link="https://all-inchess.com/" type="regular">
+                    Website
+                </CustomButton>
+            </Column>
+            <Column verticalAlign="vertical-center">
+                <CountryCompany label="México" country="MX" visible="desktop" />
+                <CustomImg
+                    src="/images/companies/all-inchess-desktop.png"
+                    visible="desktop"
+                    width="90%"
+                />
+            </Column>
+        </Container>
+        <Container columns={2}>
+            <Column>
+                <Title>My work details</Title>
+                <Subtitle>Achievements during my time at All Inchess</Subtitle>
+                <Divider />
+                <CustomImg
+                    src="/images/my-work-experience-mobile.png"
+                    visible="mobile"
+                    width="100%"
+                />
+                <Text>
+                    I designed and developed their modern and responsive WordPress website, aimed at attracting new students and online customers.
+                </Text>
+                <Text>
+                    I also implemented on-page SEO best practices and optimized site performance to ensure fast load times and better visibility on search engines, ultimately improving user experience and engagement.
+                </Text>
+            </Column>
+            <Column>
+                <CustomImg
+                    src="/images/work-experience-desktop.png"
+                    visible="desktop"
+                    width="80%"
+                />
+            </Column>
+        </Container>
+        <TrustedCompanies exclude="All Inchess" />
+        <LetsWorkTogether />
+    </man>
 </Layout>

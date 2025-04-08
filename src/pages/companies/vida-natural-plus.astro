@@ -1,8 +1,88 @@
 ---
+import Column from "../../components/basics/Column.astro";
+import Container from "../../components/basics/Container.astro";
+import CustomButton from "../../components/basics/CustomButton.astro";
+import CustomImg from "../../components/basics/CustomImg.astro";
+import Divider from "../../components/basics/Divider.astro";
+import MainTitle from "../../components/basics/MainTitle.astro";
+import Subtitle from "../../components/basics/Subtitle.astro";
 import Layout from "../../layouts/Layout.astro";
-import ComingSoon from "../../views/ComingSoon.astro";
+import Text from "../../components/basics/Text.astro";
+import Title from "../../components/basics/Title.astro";
+import LetsWorkTogether from "../../views/contact/LetsWorkTogether.astro";
+import TrustedCompanies from "../../views/companies/TrustedCompanies.astro";
+import CountryCompany from "../../views/companies/CountryCompany.astro";
 ---
 
 <Layout>
-    <ComingSoon />
+    <man view-transition-name="page">
+        <Container columns={2}>
+            <Column>
+                <CountryCompany label="Colombia" country="CO" visible="mobile" />
+                <CustomImg
+                    src="/images/companies/mobile/vida-natural-plus-mobile.png"
+                    visible="mobile"
+                    width="100%"
+                />
+                <MainTitle>Vida Natural Plus</MainTitle>
+                <Subtitle
+                    >Natural store specialized in dietary supplements.</Subtitle
+                >
+                <Divider />
+                <Text>
+                    Vida Natural + is a health-focused store that specializes in
+                    high-quality dietary supplements, vitamins, and wellness
+                    products. With a commitment to natural ingredients and
+                    holistic health, the brand aims to support customers in
+                    achieving their wellness goals through expert guidance and
+                    carefully curated selections, both online and in physical
+                    locations.
+                </Text>
+                <CustomButton link="https://vidanaturalplus.com/" type="regular">
+                    Website
+                </CustomButton>
+            </Column>
+            <Column verticalAlign="vertical-center">
+                <CountryCompany label="Colombia" country="CO" visible="desktop" />
+                <CustomImg
+                    src="/images/companies/vida-natural-plus-desktop.png"
+                    visible="desktop"
+                    width="90%"
+                />
+            </Column>
+        </Container>
+        <Container columns={2}>
+            <Column>
+                <Title>My work details</Title>
+                <Subtitle>Achievements during my time at Vida Natural Plus</Subtitle>
+                <Divider />
+                <CustomImg
+                    src="/images/my-work-experience-mobile.png"
+                    visible="mobile"
+                    width="100%"
+                />
+                <Text>
+                    I designed their full WordPress website, implemented on-page
+                    SEO, and managed their ad campaigns through Google Ads to
+                    increase visibility and conversions.
+                </Text>
+                <Text>
+                    also set up conversion tracking and regularly analyzed
+                    performance data to refine campaigns and improve ROI. My
+                    focus was on aligning design, SEO, and advertising to create
+                    a cohesive digital presence that effectively attracted and
+                    retained customers.
+                </Text>
+            </Column>
+            <Column>
+                <CustomImg
+                    src="/images/work-experience-desktop.png"
+                    visible="desktop"
+                    width="80%"
+                />
+            </Column>
+        </Container>
+        <TrustedCompanies exclude="Vida Natural Plus" />
+        <LetsWorkTogether />
+    </man>
 </Layout>

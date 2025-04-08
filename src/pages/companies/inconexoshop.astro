@@ -1,8 +1,100 @@
 ---
-import Layout from "../../layouts/Layout.astro"
-import ComingSoon from "../../views/ComingSoon.astro"
+import Column from "../../components/basics/Column.astro";
+import Container from "../../components/basics/Container.astro";
+import CustomButton from "../../components/basics/CustomButton.astro";
+import CustomImg from "../../components/basics/CustomImg.astro";
+import Divider from "../../components/basics/Divider.astro";
+import MainTitle from "../../components/basics/MainTitle.astro";
+import Subtitle from "../../components/basics/Subtitle.astro";
+import Layout from "../../layouts/Layout.astro";
+import Text from "../../components/basics/Text.astro";
+import Title from "../../components/basics/Title.astro";
+import ItemExperience from "../../components/experience/ItemExperience.astro";
+import LetsWorkTogether from "../../views/contact/LetsWorkTogether.astro";
+import TrustedCompanies from "../../views/companies/TrustedCompanies.astro";
+import CountryCompany from "../../views/companies/CountryCompany.astro";
 ---
 
 <Layout>
-    <ComingSoon />
+    <man view-transition-name="page">
+        <Container columns={2}>
+            <Column>
+                <CountryCompany label="Bogotá, Colombia" country="CO" visible="mobile" />
+                <CustomImg
+                    src="/images/companies/mobile/inconexoshop-mobile.png"
+                    visible="mobile"
+                    width="100%"
+                />
+                <MainTitle>Inconexo Shop</MainTitle>
+                <Subtitle>Ecommerce focused on tech products and accessories.</Subtitle
+                >
+                <Divider />
+                <Text>
+                    Inconexo Shop is an eCommerce platform specializing in cutting-edge tech products and accessories, from smart devices and gadgets to essential peripherals. The brand focuses on delivering high-quality, curated items with a seamless online shopping experience, fast shipping, and reliable customer support. Its goal is to make the latest tech accessible and convenient for everyday users and enthusiasts alike.
+                </Text>
+            </Column>
+            <Column verticalAlign="vertical-center">
+                <CountryCompany label="Bogotá, Colombia" country="CO" visible="desktop" />
+                <CustomImg
+                    src="/images/companies/inconexoshop-desktop.png"
+                    visible="desktop"
+                    width="90%"
+                />
+            </Column>
+        </Container>
+        <Container columns={1} id="experience">
+            <Column>
+                <Title>My work experience</Title>
+                <Subtitle>My experience in Inconexo Shop</Subtitle>
+                <Divider />
+                <br />
+                <br />
+                <ItemExperience
+                    label="Digital Marketing Manager"
+                    period="March 2022 - December 2023"
+                    company="DrEnvío - México"
+                />
+            </Column>
+            <Column align="center">
+                <CustomButton
+                    link="http://robertriera.com/wp-content/uploads/2025/04/Robert-Riera-CV-English-Version.pdf"
+                    type="CV"
+                    >Download Curriculum
+                </CustomButton>
+            </Column>
+        </Container>
+        <Container columns={2}>
+            <Column>
+                <Title>My work details</Title>
+                <Subtitle>Achievements during my time at Inconexo Shop</Subtitle>
+                <Divider />
+                <CustomImg
+                    src="/images/my-work-experience-mobile.png"
+                    visible="mobile"
+                    width="100%"
+                />
+                <Text>
+                    I led digital marketing strategies that drove traffic and
+                    customer acquisition, optimized conversion funnels, and
+                    executed high-performing multichannel campaigns
+                </Text>
+                <Text>
+                    I also leveraged data analytics to continuously refine
+                    campaign performance, identify growth opportunities, and
+                    improve ROI. My approach combined creativity with a
+                    data-driven mindset to deliver measurable results across
+                    various digital platforms.
+                </Text>
+            </Column>
+            <Column>
+                <CustomImg
+                    src="/images/work-experience-desktop.png"
+                    visible="desktop"
+                    width="80%"
+                />
+            </Column>
+        </Container>
+        <TrustedCompanies exclude="Inconexo Shop" />
+        <LetsWorkTogether />
+    </man>
 </Layout>

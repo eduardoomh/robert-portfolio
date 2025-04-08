@@ -19,7 +19,7 @@ const companies = [
     {
         company: "IP Architechs",
         image: "/images/companies/iparchitechs.png",
-        link: '/companies/iparchitechs'
+        link: '/companies/ip-architechs'
     },
     {
         company: "Inconexo Shop",
@@ -32,7 +32,7 @@ const companies = [
         link: '/companies/movii-agencia'
     },
     {
-        company: "Vida Natural +",
+        company: "Vida Natural Plus",
         image: "/images/companies/vida-natural-plus.png",
         link: '/companies/vida-natural-plus'
     },

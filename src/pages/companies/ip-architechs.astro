@@ -1,8 +1,111 @@
 ---
-import Layout from "../../layouts/Layout.astro"
-import ComingSoon from "../../views/ComingSoon.astro"
+import Column from "../../components/basics/Column.astro";
+import Container from "../../components/basics/Container.astro";
+import CustomButton from "../../components/basics/CustomButton.astro";
+import CustomImg from "../../components/basics/CustomImg.astro";
+import Divider from "../../components/basics/Divider.astro";
+import MainTitle from "../../components/basics/MainTitle.astro";
+import Subtitle from "../../components/basics/Subtitle.astro";
+import Layout from "../../layouts/Layout.astro";
+import Text from "../../components/basics/Text.astro";
+import Title from "../../components/basics/Title.astro";
+import ItemExperience from "../../components/experience/ItemExperience.astro";
+import LetsWorkTogether from "../../views/contact/LetsWorkTogether.astro";
+import TrustedCompanies from "../../views/companies/TrustedCompanies.astro";
+import CountryCompany from "../../views/companies/CountryCompany.astro";
 ---
 
 <Layout>
-    <ComingSoon />
+    <man view-transition-name="page">
+        <Container columns={2}>
+            <Column>
+                <CountryCompany label="United States" country="US" visible="mobile" />
+                <CustomImg
+                    src="/images/companies/mobile/ip-architechs-mobile.png"
+                    visible="mobile"
+                    width="100%"
+                />
+                <MainTitle>IP Architechs</MainTitle>
+                <Subtitle
+                    >Network consulting firm for ISPs and Data Centers.</Subtitle
+                >
+                <Divider />
+                <Text>
+                    P Architechs is a specialized network consulting firm that
+                    provides high-level engineering solutions for Internet
+                    Service Providers and Data Centers. With a focus on
+                    scalability, performance, and security, the company helps
+                    clients design, optimize, and troubleshoot complex network
+                    infrastructures, delivering tailored solutions that meet
+                    both technical and business objectives.
+                </Text>
+                <CustomButton link="http://iparchitechs.com/" type="regular">
+                    Website
+                </CustomButton>
+            </Column>
+            <Column verticalAlign="vertical-center">
+                <CountryCompany label="United States" country="US" visible="desktop" />
+                <CustomImg
+                    src="/images/companies/ip-architechs-desktop.png"
+                    visible="desktop"
+                    width="90%"
+                />
+            </Column>
+        </Container>
+        <Container columns={1} id="experience">
+            <Column>
+                <Title>My work experience</Title>
+                <Subtitle>My experience in Web360 Agencia Digital</Subtitle>
+                <Divider />
+                <br />
+                <br />
+                <ItemExperience
+                    label="Digital Marketing Manager"
+                    period="May 2021 - March 2022"
+                    company="Web360 Agencia Digital - México"
+                />
+            </Column>
+            <Column align="center">
+                <CustomButton
+                    link="http://robertriera.com/wp-content/uploads/2025/04/Robert-Riera-CV-English-Version.pdf"
+                    type="CV"
+                    >Download Curriculum
+                </CustomButton>
+            </Column>
+        </Container>
+        <Container columns={2}>
+            <Column>
+                <Title>My work details</Title>
+                <Subtitle>Achievements during my time at Web360</Subtitle>
+                <Divider />
+                <CustomImg
+                    src="/images/my-work-experience-mobile.png"
+                    visible="mobile"
+                    width="100%"
+                />
+                <Text>
+                    I currently serve as the Chief Marketing Officer,
+                    responsible for scaling results through SEO, automation,
+                    digital advertising, and strong multichannel brand presence.
+                </Text>
+                <Text>
+                    I lead a cross-functional team to execute data-driven
+                    marketing strategies, aligning business goals with
+                    measurable performance outcomes. My role also involves
+                    constant experimentation, optimizing customer journeys, and
+                    identifying growth opportunities across both local and
+                    international markets.
+                </Text>
+            </Column>
+            <Column>
+                <CustomImg
+                    src="/images/work-experience-desktop.png"
+                    visible="desktop"
+                    width="80%"
+                />
+            </Column>
+        </Container>
+        <TrustedCompanies exclude="IP Architechs" />
+        <LetsWorkTogether />
+    </man>
 </Layout>

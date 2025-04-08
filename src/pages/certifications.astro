@@ -1,8 +1,46 @@
 ---
+import Column from "../components/basics/Column.astro";
+import Container from "../components/basics/Container.astro";
+import CustomButton from "../components/basics/CustomButton.astro";
+import CustomImg from "../components/basics/CustomImg.astro";
+import Divider from "../components/basics/Divider.astro";
+import MainTitle from "../components/basics/MainTitle.astro";
+import Subtitle from "../components/basics/Subtitle.astro";
 import Layout from "../layouts/Layout.astro";
-import ComingSoon from "../views/ComingSoon.astro";
+import Text from "../components/basics/Text.astro";
+import LetsWorkTogether from "../views/contact/LetsWorkTogether.astro";
 ---
 
 <Layout>
-    <ComingSoon />
+    <man view-transition-name="page">
+        <Container columns={2}>
+            <Column>
+                <CustomImg
+                    src="/images/certifications/mobile/certification-mobile.png"
+                    visible="mobile"
+                    width="100%"
+                />
+                <MainTitle>Certifications</MainTitle>
+                <Subtitle>Certifications from courses I’ve completed</Subtitle>
+                <Divider />
+                <Text>
+                    On the following page, you’ll find a selection of
+                    certifications I’ve earned through courses and conferences
+                    I’ve attended, reflecting my ongoing commitment to growth as
+                    a marketing leader.
+                </Text>
+                <CustomButton link="/#contact" type="regular">
+                    Contact me
+                </CustomButton>
+            </Column>
+            <Column verticalAlign="vertical-center">
+                <CustomImg
+                    src="/images/certifications/certification-desktop.png"
+                    visible="desktop"
+                    width="90%"
+                />
+            </Column>
+        </Container>
+        <LetsWorkTogether />
+    </man>
 </Layout>

@@ -1,8 +1,88 @@
 ---
-import Layout from "../../layouts/Layout.astro"
-import ComingSoon from "../../views/ComingSoon.astro"
+import Column from "../../components/basics/Column.astro";
+import Container from "../../components/basics/Container.astro";
+import CustomButton from "../../components/basics/CustomButton.astro";
+import CustomImg from "../../components/basics/CustomImg.astro";
+import Divider from "../../components/basics/Divider.astro";
+import MainTitle from "../../components/basics/MainTitle.astro";
+import Subtitle from "../../components/basics/Subtitle.astro";
+import Layout from "../../layouts/Layout.astro";
+import Text from "../../components/basics/Text.astro";
+import Title from "../../components/basics/Title.astro";
+import LetsWorkTogether from "../../views/contact/LetsWorkTogether.astro";
+import TrustedCompanies from "../../views/companies/TrustedCompanies.astro";
+import CountryCompany from "../../views/companies/CountryCompany.astro";
 ---
 
 <Layout>
-    <ComingSoon />
+    <man view-transition-name="page">
+        <Container columns={2}>
+            <Column>
+                <CountryCompany label="United States" country="US" visible="mobile" />
+                <CustomImg
+                    src="/images/companies/mobile/goairheads-mobile.png"
+                    visible="mobile"
+                    width="100%"
+                />
+                <MainTitle>GOAIRHEADS</MainTitle>
+                <Subtitle>Airsoft field and pro shop.</Subtitle>
+                <Divider />
+                <Text>
+                    GOAIRHEADS is a premier airsoft field and pro shop offering
+                    immersive tactical experiences for players of all skill
+                    levels. Located in Colorado, the company provides a safe and
+                    well-structured environment for recreational and competitive
+                    airsoft games, along with a fully stocked pro shop featuring
+                    high-quality gear, upgrades, and accessories. Their mission
+                    is to grow the airsoft community by delivering top-tier
+                    service, events, and equipment.
+                </Text>
+                <CustomButton link="https://www.goairheads.com/" type="regular">
+                    Website
+                </CustomButton>
+            </Column>
+            <Column verticalAlign="vertical-center">
+                <CountryCompany label="United States" country="US" visible="desktop" />
+                <CustomImg
+                    src="/images/companies/goairheads-desktop.png"
+                    visible="desktop"
+                    width="90%"
+                />
+            </Column>
+        </Container>
+            <Container columns={2}>
+                <Column>
+                    <Title>My work details</Title>
+                    <Subtitle>Achievements during my time at GOAIRHEADS</Subtitle>
+                    <Divider />
+                    <CustomImg
+                        src="/images/my-work-experience-mobile.png"
+                        visible="mobile"
+                        width="100%"
+                    />
+                    <Text>
+                        I manage their social media and advertising strategies,
+                        increasing engagement, web traffic, and product sales
+                        through targeted campaigns and content planning.
+                    </Text>
+                    <Text>
+                        I also analyze performance metrics regularly to refine
+                        strategies, identify growth opportunities, and ensure
+                        campaigns align with brand goals. My approach balances
+                        creativity and data to drive consistent results across
+                        platforms.
+                    </Text>
+                </Column>
+                <Column>
+                    <CustomImg
+                        src="/images/work-experience-desktop.png"
+                        visible="desktop"
+                        width="80%"
+                    />
+                </Column>
+            </Container>
+            <TrustedCompanies exclude="GOAIRHEADS" />
+            <LetsWorkTogether />
+        </Container>
+    </man>
 </Layout>

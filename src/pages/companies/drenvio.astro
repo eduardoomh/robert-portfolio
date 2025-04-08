@@ -12,14 +12,16 @@ import Title from "../../components/basics/Title.astro";
 import ItemExperience from "../../components/experience/ItemExperience.astro";
 import LetsWorkTogether from "../../views/contact/LetsWorkTogether.astro";
 import TrustedCompanies from "../../views/companies/TrustedCompanies.astro";
+import CountryCompany from "../../views/companies/CountryCompany.astro";
 ---
 
 <Layout>
     <man view-transition-name="page">
         <Container columns={2}>
             <Column>
+                <CountryCompany label="Monterrey, México" country="MX" visible="mobile" />
                 <CustomImg
-                    src="/images/robert-banner-mobile.png"
+                    src="/images/companies/mobile/drenvio-mobile.png"
                     visible="mobile"
                     width="100%"
                 />
@@ -41,8 +43,9 @@ import TrustedCompanies from "../../views/companies/TrustedCompanies.astro";
                 </CustomButton>
             </Column>
             <Column verticalAlign="vertical-center">
+                <CountryCompany label="Monterrey, México" country="MX" visible="desktop" />
                 <CustomImg
-                    src="/images/companies/drenvio-company-drenvio-desktop.png"
+                    src="/images/companies/drenvio-desktop.png"
                     visible="desktop"
                     width="90%"
                 />
@@ -75,7 +78,7 @@ import TrustedCompanies from "../../views/companies/TrustedCompanies.astro";
                 <Subtitle>Achievements during my time at Drenvio</Subtitle>
                 <Divider />
                 <CustomImg
-                    src="/images/robert-in-computer.png"
+                    src="/images/my-work-experience-mobile.png"
                     visible="mobile"
                     width="100%"
                 />
@@ -104,20 +107,3 @@ import TrustedCompanies from "../../views/companies/TrustedCompanies.astro";
         <LetsWorkTogether />
     </man>
 </Layout>
-
-<style>
-    /* Puedes agregarlo a tu archivo CSS global o en un archivo de estilos de la página */
-    ::view-transition-old(page),
-    ::view-transition-new(page) {
-        animation: fade 0.5s ease;
-    }
-
-    @keyframes fade {
-        from {
-            opacity: 0;
-        }
-        to {
-            opacity: 1;
-        }
-    }
-</style>
