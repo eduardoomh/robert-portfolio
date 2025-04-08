@@ -1,0 +1,39 @@
+---
+import Divider from "../../components/basics/Divider.astro";
+
+interface props {
+    label: string;
+}
+
+const { label } = Astro.props;
+---
+
+<article class="certification-item">
+    <section>
+        <svg
+            width="20"
+            height="24"
+            viewBox="0 0 24 27"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+        >
+            <path
+                d="M22.6667 26.8332H1.33333C0.979711 26.8332 0.640573 26.6927 0.390524 26.4426C0.140476 26.1926 0 25.8535 0 25.4998V1.49984C0 1.14622 0.140476 0.807077 0.390524 0.557028C0.640573 0.30698 0.979711 0.166504 1.33333 0.166504H22.6667C23.0203 0.166504 23.3594 0.30698 23.6095 0.557028C23.8595 0.807077 24 1.14622 24 1.49984V25.4998C24 25.8535 23.8595 26.1926 23.6095 26.4426C23.3594 26.6927 23.0203 26.8332 22.6667 26.8332ZM6.66667 9.49984V12.1665H17.3333V9.49984H6.66667ZM6.66667 14.8332V17.4998H17.3333V14.8332H6.66667Z"
+                fill="#F7F7F7"></path>
+        </svg>
+        <h3>{label}</h3>
+    </section>
+    
+    <Divider />
+    <slot />
+</article>
+
+<style>
+    .certification-item section{
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 12px;
+        color: var(--primary-white)
+    }
+</style>
