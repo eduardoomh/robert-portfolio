@@ -19,8 +19,8 @@ const getIconType = (type: iconType, className: string) => {
                 className={className}
             >
                 <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
+                    fillRule="evenodd"
+                    clipRule="evenodd"
                     d="M18.5 21.3923V8.2H12.5C11.9477 8.2 11.5 7.70751 11.5 7.1V0.5H1.498C0.946999 0.5 0.5 1.0005 0.5 1.5912V21.4088C0.500552 22.0116 0.944971 22.5 1.493 22.5H17.507C17.7722 22.498 18.0258 22.3801 18.212 22.1724C18.3983 21.9646 18.5018 21.684 18.5 21.3923ZM13.5 6H18.5L13.5 0.503297V6Z"
                     fill="#F7F7F7"></path>
             </svg>

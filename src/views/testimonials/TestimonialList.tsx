@@ -34,15 +34,15 @@ const testimonials = [
   }
 ];
 
-export default function TestimonialSlider() {
+export default function TestimonialList() {
   const intinityTestimonials = [...testimonials, ...testimonials]
 
   return (
     <div className={styles.testimonialSlider}>
       <div className={`${styles.testimonialContainer}`}>
         {
-          intinityTestimonials.map(item => (
-            <TestimonialItem user={item.user} image={item.image}>
+          intinityTestimonials.map((item, index) => (
+            <TestimonialItem user={item.user} image={item.image} key={`${item.user}-${index + 1}`}>
               {item.text}
             </TestimonialItem>
           ))
