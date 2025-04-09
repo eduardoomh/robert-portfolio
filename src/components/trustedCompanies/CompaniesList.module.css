@@ -18,6 +18,7 @@
     max-width: 100%;
     overflow: hidden;
     margin-top: 16px;
+    padding-top: 16px;
 }
 
 .sliderCompanies{
@@ -33,6 +34,10 @@
 .companyItem{
     transition: transform 0.2s ease-in;
     background-color: var(--secondary-green);
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
 }
 
 .companyItem:hover {
@@ -50,6 +55,8 @@
 .companyItem a img{
     width: 200px;
     height: 112px;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
 }
 
 .companyItem_title{
