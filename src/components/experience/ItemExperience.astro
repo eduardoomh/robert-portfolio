@@ -6,8 +6,9 @@ interface props {
     label: string;
     period: string;
     company: string;
+    link: string;
 }
-const { label, period, company } = Astro.props;
+const { label, period, company, link } = Astro.props;
 ---
 
 <section class="experience-item">
@@ -46,12 +47,12 @@ const { label, period, company } = Astro.props;
         </svg>
     </div>
 
-    <div class="experience-item__content">
+    <a class="experience-item__content" href={link}>
         <h3>{label}</h3>
         <Divider />
         <p class="experience-item__content__period">{period}</p>
         <Text>{company}</Text>
-    </div>
+    </a>
 </section>
 
 <style>
@@ -62,11 +63,14 @@ const { label, period, company } = Astro.props;
         color: var(--primary-white);
     }
 
-    .experience-item__content{
+    .experience-item__content {
         transition: all 0.2s ease-in;
+        color: inherit;
+        text-decoration: none;
+        cursor: pointer;
     }
 
-    .experience-item__content h3{
+    .experience-item__content h3 {
         margin-top: 0;
     }
 
@@ -74,7 +78,6 @@ const { label, period, company } = Astro.props;
         font-size: 14px;
     }
     .experience-item__content:hover {
-    transform: scale(1.02);
+        transform: scale(1.02);
     }
-
 </style>

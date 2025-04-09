@@ -12,9 +12,10 @@
 
 .companiesList {
     position: relative;
-    width: 400px;
-    height: 16rem;
-    max-width: 1000px;
+    width: calc(100vw - 32px);
+    max-width: calc(100vw - 32px);
+    height: 12rem;
+    max-width: 100%;
     overflow: hidden;
     margin-top: 16px;
 }
@@ -46,10 +47,18 @@
     color: var(--primary-dark);
 }
 
+.companyItem a img{
+    width: 200px;
+    height: 112px;
+}
+
 .companyItem_title{
-    padding: 0 12px;
+    padding: 12px 6px;
+    margin: 0;
     color: inherit;
     text-decoration: none;
+    font-size: 16px;
+    font-weight: 400;
 }
 
 
@@ -64,5 +73,16 @@
         width: 400px;
         max-width: 400px;
     }
+
+    .companyItem a img{
+        width: 287px;
+        height: 157px;
+    }
+
+    .companyItem_title{
+        padding: 20px 12px;
+        font-weight: 600;
+    }
+    
     
   }

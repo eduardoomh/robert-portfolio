@@ -10,7 +10,7 @@ const testimonials = [
   {
     user: "Jean Posso - Marketing Assistant in Web360",
     image: "/images/testimonials/jean-posso.png",
-    text: "Me complace expresar mi agradecimiento por su excelente labor como gerente de marketing digital en nuestra empresa. Desde que se unió al equipo, ha sido un líder inspirador que ha demostrado una gran capacidad para guiar y motivar al equipo hacia el éxito."
+    text: "I am pleased to express my gratitude for your excellent work as Digital Marketing Manager in our company. Since joining the team, you have been an inspiring leader who has demonstrated a great ability to guide and motivate the team toward success."
   },
   {
     user: "Eduardo Villasmil - CEO in ColNetwork",
