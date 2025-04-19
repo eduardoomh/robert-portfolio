@@ -3,6 +3,7 @@ import "@fontsource/rubik";
 import Logo from "../components/header/Logo.astro";
 import Socialicons from "../components/header/social-icons/Socialicons.astro";
 import MenuLink from "../components/header/DesktopMenu/MenuLink";
+import CountryOption from "../components/header/countryOption/ContryOption";
 ---
 
 <header class="header">
@@ -14,6 +15,7 @@ import MenuLink from "../components/header/DesktopMenu/MenuLink";
             <MenuLink client:load path="/#skills" label="Skills" />
             <MenuLink client:load path="/#contact" label="Contact" />
             <Socialicons />
+            <CountryOption client:load isDesktop={true} />
         </ul>
     </nav>
 </header>

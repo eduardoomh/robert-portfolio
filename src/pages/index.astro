@@ -17,14 +17,11 @@ import Testimonials from "../views/testimonials/Testimonials.astro";
 import TrustedCompanies from "../views/companies/TrustedCompanies.astro";
 import AboutMeStats from "../views/aboutMe/AboutMeStats.astro";
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
 <Layout>
 	<Container columns={2}>
 		<Column>
-			<p></p>
 			<CustomImg
 				src="/images/robert-banner-mobile.png"
 				visible="mobile"
@@ -56,7 +53,7 @@ import AboutMeStats from "../views/aboutMe/AboutMeStats.astro";
 		</Column>
 	</Container>
 
-	<Container columns={2}>
+	<Container columns={2} id="about-me">
 		<Column >
 			<CustomImg
 				src="/images/robert-in-computer-mobile.png"

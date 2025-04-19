@@ -20,13 +20,13 @@
 }
 
 .iconMobileMenu:hover {
-    transform: scale(1.1); /* Aumenta un 10% el tamaño */
+    transform: scale(1.1);
     cursor: pointer;
 }
 
 /* Efecto de zoom al hacer clic */
 .iconMobileMenu:active {
-    transform: scale(1.2); /* Aumenta un 20% el tamaño temporalmente */
+    transform: scale(1.2);
     cursor: pointer;
 }
 
@@ -58,7 +58,7 @@
 .menuOptions li {
     display: flex;
     align-items: center;
-    width: 100%;
+    width: 90%;
     height: 32px;
     padding: 10px;
     font-size: 18px;

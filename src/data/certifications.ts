@@ -1,0 +1,80 @@
+export const certificationsList = [
+    {
+      label: "RD STATION - Inbound Marketing",
+      image: "/images/certifications/rd-station-inbound-marketing.png",
+      alt: "rd-station-inbound-marketing",
+      description: `This certification from RD Station validates my knowledge in Inbound Marketing strategies, including content creation, lead nurturing, and conversion optimization. It demonstrates my ability to plan and execute marketing campaigns that attract, engage, and convert audiences using the Inbound methodology.`,
+    },
+    {
+      label: "Mercatitlán - Google Ads",
+      image: "/images/certifications/mercatitlan-google-ads.png",
+      alt: "mercatitlan-google-ads",
+      description: `This course provided practical training in Google Ads, covering campaign structure, keyword strategies, ad copywriting, and performance analysis. Through Mercatitlán’s approach, I gained hands-on experience in creating and managing high-converting search and display campaigns tailored to different business objectives.`,
+    },
+    {
+      label: "Mercatitlán - Advanced Google Ads",
+      image: "/images/certifications/mercatitlan-google-ads-advanced.png",
+      alt: "mercatitlan-google-ads-advanced",
+      description: `This advanced Google Ads course deepened my expertise in optimizing campaigns for better ROI, using advanced bidding strategies, audience segmentation, and data-driven decision-making. I also learned to integrate Google Analytics insights to refine ad performance and scale campaigns effectively.`,
+    },
+    {
+      label: "Udemy - Facebook Ads",
+      image: "/images/certifications/udemy-facebook-ads.jpeg",
+      alt: "udemy-facebook-ads",
+      description: `This certification covered the fundamentals and best practices of Facebook Ads, including campaign setup, audience targeting, creative development, and performance optimization. Through Udemy’s practical approach, I learned how to run effective ad campaigns across Facebook and Instagram to drive engagement, traffic, and conversions.`,
+    },
+    {
+      label: "Udemy - HTML5 y CSS3",
+      image: "/images/certifications/udemy-html5-css3.jpeg",
+      alt: "udemy-html5-css3",
+      description: `This course provided a solid foundation in front-end web development using HTML5 and CSS3. I gained hands-on experience building responsive, accessible websites, learning how to structure content semantically and style layouts effectively for modern web standards.`,
+    },
+    {
+      label: "Udemy - Project Management",
+      image: "/images/certifications/udemy-project-management.jpeg",
+      alt: "udemy-project-management",
+      description: `This course equipped me with essential project management skills, including planning, task delegation, risk assessment, and performance tracking. I learned to apply methodologies like Agile and Waterfall to manage marketing and cross-functional projects efficiently, ensuring timely delivery and alignment with strategic goals.`,
+    },
+    {
+      label: "Udemy – Content Marketing on TikTok and Instagram",
+      image: "/images/certifications/content-marketing-tiktok-instagram.jpeg",
+      alt: "content-marketing-tiktok-instagram",
+      description: `This course focused on content marketing strategies tailored for TikTok and Instagram. I learned how to create engaging short-form video content, leverage trends, and build brand visibility through storytelling and platform-specific tactics aimed at growing audiences and driving interaction.`,
+    },
+    {
+      label: "RD STATION - Marketing and Sales via WhatsApp",
+      image: "/images/certifications/marketing-and-sales-whatsapp.webp",
+      alt: "marketing-and-sales-whatsapp",
+      description: `This course focused on leveraging WhatsApp as a powerful tool for marketing and sales. I learned how to create personalized customer journeys, automate communications, and integrate WhatsApp with CRM systems to enhance customer engagement and drive conversions. The course also covered best practices for using WhatsApp for lead generation and building long-term customer relationships.`,
+    },
+    {
+      label: "HubSpot Academy - Inbound Marketing",
+      image: "/images/certifications/hubspot-academy-inbound-marketing.webp",
+      alt: "hubspot-academy-inbound-marketing",
+      description: `This course from HubSpot Academy provided comprehensive training on inbound marketing strategies, focusing on attracting, engaging, and delighting customers. I learned key techniques in content creation, SEO, lead nurturing, and email marketing. The course also covered how to leverage automation tools and analytics to optimize campaigns and drive sustainable business growth.`,
+    },
+    {
+      label: "Udemy – WordPress from 0 to 100",
+      image: "/images/certifications/udemy-wordpress-from-0-to-100.jpeg",
+      alt: "udemy-wordpress-from-0-to-100",
+      description: `This course provided a thorough introduction to WordPress, guiding me from the basics to advanced features. I learned how to set up, customize, and manage websites using WordPress, including themes, plugins, SEO optimization, and security best practices. The course also covered the creation of responsive websites and eCommerce stores, providing practical skills for building professional sites from scratch.`,
+    },
+    {
+      label: "Udemy - UX Research and Journey Map",
+      image: "/images/certifications/udemy-research-and-journey-map.webp",
+      alt: "udemy-research-and-journey-map",
+      description: `This course provided in-depth knowledge of UX research methods and the creation of journey maps to enhance user experience. I learned how to gather and analyze user feedback, identify pain points, and map out the entire user journey to improve product design. The course also covered key techniques for optimizing user interfaces and ensuring a seamless experience across digital platforms.`,
+    },
+    {
+      label: "Udemy - Basic English Course",
+      image: "/images/certifications/udemy-basic-english-course.webp",
+      alt: "udemy-basic-english-course",
+      description: `This course provides a solid foundation in basic English, covering essential grammar, vocabulary, and pronunciation. It is designed for beginners and focuses on developing speaking, listening, reading, and writing skills. Through practical exercises and engaging lessons, I learned how to communicate effectively in everyday situations and improve my overall fluency in English.`,
+    },
+    {
+      label: "Udemy - CHAT GPT",
+      image: "/images/certifications/udemy-chat-gpt.webp",
+      alt: "udemy-chat-gpt",
+      description: `This course provided a comprehensive understanding of how to use ChatGPT effectively for various applications. I learned how to leverage the AI model for content creation, problem-solving, and automating tasks. The course covered the fundamentals of natural language processing, fine-tuning responses, and utilizing ChatGPT for business and personal productivity, making it a valuable tool for enhancing communication and efficiency.`,
+    },
+  ];
