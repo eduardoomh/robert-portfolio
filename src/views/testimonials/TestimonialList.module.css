@@ -13,8 +13,8 @@
   align-items: center;
   gap: 24px;
   transition: opacity 0.2s ease-in-out;
-  animation: desplazamiento 60s linear infinite;
-  -webkit-animation: desplazamiento 60s linear infinite;
+  animation: desplazamiento 45s linear infinite;
+  -webkit-animation: desplazamiento 45s linear infinite;
   width: 100%;
   max-width: 100%;
 }
