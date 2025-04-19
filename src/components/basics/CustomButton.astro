@@ -5,20 +5,30 @@ import ButtonIcon from '../buttonIcons/ButtonIcon';
 export interface Props {
   link: string;
   type: 'regular' | 'CV' | 'send';
+  submit?: boolean;
 }
 
-const { link, type } = Astro.props;
+const { link, type, submit } = Astro.props;
 ---
 
 <div class="button-container">
-<a href={link} target="_blank" rel="noopener noreferrer" class="btn">
-  <span class="btn-text">
-    <slot />
-    <!-- Aquí se inyectará el texto del botón -->
-  </span>
-  <!-- Icono SVG -->
-  <ButtonIcon iconType={type} className='btn-icon' />
-</a>
+  {
+    submit ? (
+      <button type="submit" class="btn">
+        <span class="btn-text">
+          <slot />
+        </span>
+        <ButtonIcon iconType={type} className="btn-icon" />
+      </button>
+    ) : (
+      <a href={link} target="_blank" rel="noopener noreferrer" class="btn">
+        <span class="btn-text">
+          <slot />
+        </span>
+        <ButtonIcon iconType={type} className="btn-icon" />
+      </a>
+    )
+  }
 </div>
 
 <style>

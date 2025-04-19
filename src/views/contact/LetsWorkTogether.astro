@@ -6,28 +6,40 @@ import CustomImg from "../../components/basics/CustomImg.astro";
 import Divider from "../../components/basics/Divider.astro";
 import Title from "../../components/basics/Title.astro";
 import Form from "../../components/contact/Form";
-import Text from '../../components/basics/Text.astro'
+import Text from "../../components/basics/Text.astro";
 ---
 
 <Container columns={2} id="contact">
     <Column>
-        <br/>
-        <CustomImg src="/images/work-together-mobile-version.png" visible="mobile" width="100%" />
-        <br/>
+        <br />
+        <CustomImg
+            src="/images/work-together-mobile-version.png"
+            visible="mobile"
+            width="100%"
+        />
+        <br />
         <Title>Let’s work together</Title>
         <Divider />
         <Text>
-            Fill out the form, and let’s start working together! I’m always excited to collaborate on new projects and build strong business relationships.  Let’s make great things happen!
+            Fill out the form, and let’s start working together! I’m always
+            excited to collaborate on new projects and build strong business
+            relationships. Let’s make great things happen!
         </Text>
-        <Form client:load />
-        <CustomButton 
-            link="http://robertriera.com/wp-content/uploads/2025/04/Robert-Riera-CV-English-Version.pdf"
-            type="send"
-        >
-            Contact me
-        </CustomButton>
+        <Form client:load>
+            <CustomButton
+                link=""
+                type="send"
+                submit={true}
+            >
+                Contact me
+            </CustomButton>
+        </Form>
     </Column>
     <Column verticalAlign="vertical-center">
-        <CustomImg src="/images/work-together.png" visible="desktop" width="90%" />
+        <CustomImg
+            src="/images/work-together.png"
+            visible="desktop"
+            width="90%"
+        />
     </Column>
 </Container>
