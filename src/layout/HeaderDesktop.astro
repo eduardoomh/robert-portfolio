@@ -14,6 +14,7 @@ import CountryOption from "../components/header/countryOption/ContryOption";
             <MenuLink client:load path="/#experience" label="Experience" />
             <MenuLink client:load path="/#skills" label="Skills" />
             <MenuLink client:load path="/#contact" label="Contact" />
+            <MenuLink client:load path="/blog" label="Blog" />
             <Socialicons />
             <CountryOption client:load isDesktop={true} />
         </ul>
@@ -89,7 +90,7 @@ import CountryOption from "../components/header/countryOption/ContryOption";
         color: var(--secondary-green);
     }
 
-    @media (max-width: 767px) {
+    @media (max-width: 899px) {
         .header {
             display: none;
         }

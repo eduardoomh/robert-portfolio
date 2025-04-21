@@ -17,6 +17,7 @@ export interface EmailValuesI{
     email: string;
     phone: string;
     message: string;
+    captcha_token: string;
 }
 
 export const sendEmail = async (values: EmailValuesI):Promise<ControllerResponse<any>> => {

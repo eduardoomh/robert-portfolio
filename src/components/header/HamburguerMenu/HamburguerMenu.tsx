@@ -37,6 +37,7 @@ export default function HamburgerMenu() {
                     <li><a href='/#experience'>Experience</a></li>
                     <li><a href='/#skills'>Skills</a></li>
                     <li><a href='/#contact'>Contact</a></li>
+                    <li><a href='/blog'>Blog</a></li>
                 </ul>
                 <SocialIcons />
             </div>
