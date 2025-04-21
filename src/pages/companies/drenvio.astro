@@ -13,6 +13,7 @@ import ItemExperience from "../../components/experience/ItemExperience.astro";
 import LetsWorkTogether from "../../views/contact/LetsWorkTogether.astro";
 import TrustedCompanies from "../../views/companies/TrustedCompanies.astro";
 import CountryCompany from "../../views/companies/CountryCompany.astro";
+import { workExperience } from "../../data/experience";
 ---
 
 <Layout>
@@ -58,11 +59,19 @@ import CountryCompany from "../../views/companies/CountryCompany.astro";
                 <Divider />
                 <br />
                 <br />
-                <ItemExperience
-                    label="Digital Marketing Manager"
-                    period="March 2022 - December 2023"
-                    company="DrEnvío - México"
-                />
+                {
+                    workExperience
+                        ?.filter((item: any) =>
+                            item.link.includes("drenvio"),
+                        )
+                        .map((item: any) => (
+                            <ItemExperience
+                                label={item.label}
+                                period={item.period}
+                                company={item.company}
+                            />
+                        ))
+                }
             </Column>
             <Column align="center">
                 <CustomButton

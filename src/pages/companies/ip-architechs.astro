@@ -13,13 +13,18 @@ import ItemExperience from "../../components/experience/ItemExperience.astro";
 import LetsWorkTogether from "../../views/contact/LetsWorkTogether.astro";
 import TrustedCompanies from "../../views/companies/TrustedCompanies.astro";
 import CountryCompany from "../../views/companies/CountryCompany.astro";
+import { workExperience } from "../../data/experience";
 ---
 
 <Layout>
     <man view-transition-name="page">
         <Container columns={2}>
             <Column>
-                <CountryCompany label="United States" country="US" visible="mobile" />
+                <CountryCompany
+                    label="United States"
+                    country="US"
+                    visible="mobile"
+                />
                 <CustomImg
                     src="/images/companies/mobile/ip-architechs-mobile.png"
                     visible="mobile"
@@ -44,7 +49,11 @@ import CountryCompany from "../../views/companies/CountryCompany.astro";
                 </CustomButton>
             </Column>
             <Column verticalAlign="vertical-center">
-                <CountryCompany label="United States" country="US" visible="desktop" />
+                <CountryCompany
+                    label="United States"
+                    country="US"
+                    visible="desktop"
+                />
                 <CustomImg
                     src="/images/companies/ip-architechs-desktop.png"
                     visible="desktop"
@@ -55,15 +64,23 @@ import CountryCompany from "../../views/companies/CountryCompany.astro";
         <Container columns={1} id="experience">
             <Column>
                 <Title>My work experience</Title>
-                <Subtitle>My experience in Web360 Agencia Digital</Subtitle>
+                <Subtitle>My experience in IP Architechs</Subtitle>
                 <Divider />
                 <br />
                 <br />
-                <ItemExperience
-                    label="Digital Marketing Manager"
-                    period="May 2021 - March 2022"
-                    company="Web360 Agencia Digital - México"
-                />
+                {
+                    workExperience
+                        ?.filter((item: any) =>
+                            item.link.includes("ip-architechs"),
+                        )
+                        .map((item: any) => (
+                            <ItemExperience
+                                label={item.label}
+                                period={item.period}
+                                company={item.company}
+                            />
+                        ))
+                }
             </Column>
             <Column align="center">
                 <CustomButton
@@ -76,7 +93,8 @@ import CountryCompany from "../../views/companies/CountryCompany.astro";
         <Container columns={2}>
             <Column>
                 <Title>My work details</Title>
-                <Subtitle>Achievements during my time at Web360</Subtitle>
+                <Subtitle>Achievements during my time at IP Architechs</Subtitle
+                >
                 <Divider />
                 <CustomImg
                     src="/images/my-work-experience-mobile.png"
