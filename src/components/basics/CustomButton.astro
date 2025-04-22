@@ -21,7 +21,7 @@ const { link, type, submit } = Astro.props;
         <ButtonIcon iconType={type} className="btn-icon" />
       </button>
     ) : (
-      <a href={link} target="_blank" rel="noreferrer" class="btn">
+      <a href={link} target="_blank" class="btn">
         <span class="btn-text">
           <slot />
         </span>
