@@ -1,10 +1,12 @@
 ---
+import { base_url } from "../../../utils/global";
+
 /* Recibimos las props `src`, `visible` y `width` */
 const { src, visible, width, hideTransition } = Astro.props;
 ---
 
 <img 
-  src={src} 
+  src={`${base_url}${src}`} 
   class={`${hideTransition ? "" : "image-transition"} ${visible === "mobile" ? "mobile-visible" : "desktop-visible"}`} 
   alt="Imagen responsive" 
   width={width || "100%"} 

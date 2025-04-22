@@ -1,4 +1,5 @@
 ---
+import { base_url } from '../../../utils/global';
 import ButtonIcon from '../buttonIcons/ButtonIcon';
 
 /* Este componente maneja un botón con un slot para el texto y un icono SVG */
@@ -6,9 +7,10 @@ export interface Props {
   link: string;
   type: 'regular' | 'CV' | 'send';
   submit?: boolean;
+  inside?: boolean;
 }
 
-const { link, type, submit } = Astro.props;
+const { link, type, submit, inside } = Astro.props;
 ---
 
 <div class="button-container">
@@ -21,7 +23,7 @@ const { link, type, submit } = Astro.props;
         <ButtonIcon iconType={type} className="btn-icon" />
       </button>
     ) : (
-      <a href={link} target="_blank" class="btn">
+      <a href={`${inside ? base_url : ''}${link}`} target="_blank" class="btn">
         <span class="btn-text">
           <slot />
         </span>

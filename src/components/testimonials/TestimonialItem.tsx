@@ -1,5 +1,6 @@
 import type { PropsWithChildren } from "react";
 import styles from './TestimonialItem.module.css'
+import { base_url } from "../../../utils/global";
 
 interface Props {
     user: string;
@@ -11,7 +12,7 @@ const TestimonialItem = (props: PropsWithChildren<Props>) => {
         <article className={styles.testimonialCard}>
             <section className={styles.UserInfo}>
                 <div className={styles.imgContainer}>
-                    <img src={image} width={60} height={60} alt={user} />
+                    <img src={`${base_url}${image}`} width={60} height={60} alt={user} />
                 </div>
                 <div className={styles.profileData}>
                     <h3>{user}</h3>

@@ -1,70 +1,70 @@
 ---
+import CustomLink from "../components/basics/CustomLink.astro";
 import Divider from "../components/basics/Divider.astro";
-import Subtitle from "../components/basics/Subtitle.astro";
 import Socialicons from "../components/header/social-icons/Socialicons.astro";
 ---
 
 <footer class="footer-layout">
-    <div class="footer-content">
-        <section class="footer-menu-sections">
-            <h3>Menu</h3>
-            <Divider />
-            <ul class="footer-menu-block">
-                <li><a href="/#about-me">About me</a></li>
-                <li><a href="/#experience">Work experience</a></li>
-                <li><a href="/#skills">Skills</a></li>
-                <li><a href="/#toolbox">Marketing toolbox</a></li>
-            </ul>
-        </section>
-        <section class="footer-menu-sections">
-            <h3>Projects</h3>
-            <Divider />
-            <ul class="footer-menu-block">
-                <li>
-                    <a href="/companies/vida-natural-plus">Vida natural plus</a>
-                </li>
-                <li><a href="/companies/all-inchess">All inchess</a></li>
-                <li><a href="/companies/drenvio">Drenvio</a></li>
-                <li><a href="/companies/ip-architechs">IP Architechs</a></li>
-                <li><a href="/companies/goairheads">GoAirHeads</a></li>
-            </ul>
-        </section>
-        <section class="footer-menu-sections">
-            <h3>Other links</h3>
-            <Divider />
-            <ul class="footer-menu-block">
-                <li><a href="/privacy-policy">Privacy policy</a></li>
-                <li><a href="/blog">Blog</a></li>
-                <li><a href="/#testimonials">Testimonials</a></li>
-                <li><a href="/certifications">Certifications</a></li>
-                <li>
-                    <a
-                       	href="https://drive.google.com/file/d/17El16Mav3nYsw0XJYdF0NSyz4EHrU4K3/view"
-                        target="_blank"
-                        >Curriculum</a
-                    >
-                </li>
-            </ul>
-        </section>
-        <section class="footer-menu-sections">
-            <h3>Contact</h3>
-            <Divider />
-            <ul class="footer-menu-block">
-                <li>
-                    <a
-                        href="mailto:marketing@robertriera.com"
-                    >
-                        marketing@robertriera.com
-                    </a>
-                </li>
-                <Socialicons align="flex-start" />
-            </ul>
-        </section>
-    </div>
-    <div class="footer-bottom">
-        <Divider />
-        <p>© 2025 Robert Riera. All rights reserved.</p>
-    </div>
+  <div class="footer-content">
+    <section class="footer-menu-sections">
+      <h3>Menu</h3>
+      <Divider />
+      <ul class="footer-menu-block">
+        <li><CustomLink href="/#about-me">About me</CustomLink></li>
+        <li><CustomLink href="/#experience">Work experience</CustomLink></li>
+        <li><CustomLink href="/#skills">Skills</CustomLink></li>
+        <li><CustomLink href="/#toolbox">Marketing toolbox</CustomLink></li>
+      </ul>
+    </section>
+
+    <section class="footer-menu-sections">
+      <h3>Projects</h3>
+      <Divider />
+      <ul class="footer-menu-block">
+        <li><CustomLink href="/companies/vida-natural-plus">Vida natural plus</CustomLink></li>
+        <li><CustomLink href="/companies/all-inchess">All inchess</CustomLink></li>
+        <li><CustomLink href="/companies/drenvio">Drenvio</CustomLink></li>
+        <li><CustomLink href="/companies/ip-architechs">IP Architechs</CustomLink></li>
+        <li><CustomLink href="/companies/goairheads">GoAirHeads</CustomLink></li>
+      </ul>
+    </section>
+
+    <section class="footer-menu-sections">
+      <h3>Other links</h3>
+      <Divider />
+      <ul class="footer-menu-block">
+        <li><CustomLink href="/privacy-policy">Privacy policy</CustomLink></li>
+        <li><CustomLink href="/blog">Blog</CustomLink></li>
+        <li><CustomLink href="/#testimonials">Testimonials</CustomLink></li>
+        <li><CustomLink href="/certifications">Certifications</CustomLink></li>
+        <li>
+          <a
+            href="https://drive.google.com/file/d/17El16Mav3nYsw0XJYdF0NSyz4EHrU4K3/view"
+            target="_blank"
+            rel="noopener noreferrer"
+          >Curriculum</a>
+        </li>
+      </ul>
+    </section>
+
+    <section class="footer-menu-sections">
+      <h3>Contact</h3>
+      <Divider />
+      <ul class="footer-menu-block">
+        <li>
+          <a href="mailto:marketing@robertriera.com">
+            marketing@robertriera.com
+          </a>
+        </li>
+        <Socialicons align="flex-start" />
+      </ul>
+    </section>
+  </div>
+
+  <div class="footer-bottom">
+    <Divider />
+    <p>© 2025 Robert Riera. All rights reserved.</p>
+  </div>
 </footer>
 
 <style>

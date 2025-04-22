@@ -2,9 +2,10 @@
 import Container from "../components/basics/Container.astro";
 import Layout from "../layouts/Layout.astro";
 import Text from "../components/basics/Text.astro";
-import LetsWorkTogether from "../views/contact/LetsWorkTogether.astro";
 import CertificationItem from "../views/certifications/CertificationItem.astro";
 import { certificationsList } from "../data/certifications";
+import { base_url } from "../../utils/global";
+import LetsWorkTogether from "../views/contact/LetsWorkTogether.astro";
 ---
 
 <Layout>
@@ -14,7 +15,7 @@ import { certificationsList } from "../data/certifications";
               <CertificationItem key={index} label={cert.label}>
                 <Text>{cert.description}</Text>
                 <br />
-                <img src={cert.image} width="100%" alt={cert.alt} />
+                <img src={`${base_url}${cert.image}`} width="100%" alt={cert.alt} />
               </CertificationItem>
             ))}
           </Container>

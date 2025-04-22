@@ -1,0 +1,22 @@
+---
+import { base_url } from "../../../utils/global";
+
+const { href } = Astro.props;
+---
+
+<a class="custom-link" href={`${base_url}${href}`}>
+    <slot />
+</a>
+
+<style>
+.custom-link{
+    text-decoration-line: none;
+    color: white ;
+    transition: color 0.2s ease-in-out;
+}
+
+.custom-link:hover {
+    color: var(--secondary-green);
+    text-decoration-line: underline;
+}
+</style>

@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import styles from './styles.module.css'
+import { base_url } from '../../../../utils/global';
 
 interface MenuLinkProps {
   path: string;
@@ -18,7 +19,7 @@ export default function MenuLink({ path, label }: MenuLinkProps) {
 
   return (
     <li>
-      <a href={path} className={`${styles.menuLink} ${isActive ?  `${styles.active}` : ""}`}>
+      <a href={`${base_url}${path}`} className={`${styles.menuLink} ${isActive ?  `${styles.active}` : ""}`}>
         {label}
       </a>
     </li>

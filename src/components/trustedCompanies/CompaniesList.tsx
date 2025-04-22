@@ -1,3 +1,4 @@
+import { base_url } from '../../../utils/global';
 import { companies } from '../../data/companies';
 import styles from './CompaniesList.module.css'
 interface Props {
@@ -17,7 +18,7 @@ export default function CompaniesList(props: Props) {
                         .map((item, index) => (
                             <article className={styles.companyItem} key={`${item.company}-${index}`}>
                                 <a
-                                    href={item.link}
+                                    href={`${base_url}${item.link}`}
                                     ref={(el) => (el as HTMLAnchorElement | null)?.setAttribute('viewTransition', '')}
                                 >
                                     <img
