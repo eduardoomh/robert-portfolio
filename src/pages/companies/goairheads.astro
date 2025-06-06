@@ -12,15 +12,21 @@ import Title from "../../components/basics/Title.astro";
 import LetsWorkTogether from "../../views/contact/LetsWorkTogether.astro";
 import TrustedCompanies from "../../views/companies/TrustedCompanies.astro";
 import CountryCompany from "../../views/companies/CountryCompany.astro";
+import WorkExperienceImgMobile from "../../components/experience/WorkExperienceImgMobile.astro";
+import WorkExperienceImgDesktop from "../../components/experience/WorkExperienceImgDesktop.astro";
 ---
 
 <Layout>
     <man view-transition-name="page">
         <Container columns={2}>
             <Column>
-                <CountryCompany label="United States" country="US" visible="mobile" />
+                <CountryCompany
+                    label="United States"
+                    country="US"
+                    visible="mobile"
+                />
                 <CustomImg
-                    src="/images/companies/mobile/goairheads-mobile.png"
+                    src="/images/companies/mobile/goairheads-mobile.webp"
                     visible="mobile"
                     width="100%"
                 />
@@ -42,47 +48,42 @@ import CountryCompany from "../../views/companies/CountryCompany.astro";
                 </CustomButton>
             </Column>
             <Column verticalAlign="vertical-center">
-                <CountryCompany label="United States" country="US" visible="desktop" />
+                <CountryCompany
+                    label="United States"
+                    country="US"
+                    visible="desktop"
+                />
                 <CustomImg
-                    src="/images/companies/goairheads-desktop.png"
+                    src="/images/companies/goairheads-desktop.webp"
                     visible="desktop"
                     width="90%"
                 />
             </Column>
         </Container>
-            <Container columns={2}>
-                <Column>
-                    <Title>My work details</Title>
-                    <Subtitle>Achievements during my time at GOAIRHEADS</Subtitle>
-                    <Divider />
-                    <CustomImg
-                        src="/images/my-work-experience-mobile.png"
-                        visible="mobile"
-                        width="100%"
-                    />
-                    <Text>
-                        I manage their social media and advertising strategies,
-                        increasing engagement, web traffic, and product sales
-                        through targeted campaigns and content planning.
-                    </Text>
-                    <Text>
-                        I also analyze performance metrics regularly to refine
-                        strategies, identify growth opportunities, and ensure
-                        campaigns align with brand goals. My approach balances
-                        creativity and data to drive consistent results across
-                        platforms.
-                    </Text>
-                </Column>
-                <Column>
-                    <CustomImg
-                        src="/images/work-experience-desktop.png"
-                        visible="desktop"
-                        width="80%"
-                    />
-                </Column>
-            </Container>
-            <TrustedCompanies exclude="GOAIRHEADS" />
-            <LetsWorkTogether />
+        <Container columns={2}>
+            <Column>
+                <Title>My work details</Title>
+                <Subtitle>Achievements during my time at GOAIRHEADS</Subtitle>
+                <Divider />
+                <WorkExperienceImgMobile />
+                <Text>
+                    I manage their social media and advertising strategies,
+                    increasing engagement, web traffic, and product sales
+                    through targeted campaigns and content planning.
+                </Text>
+                <Text>
+                    I also analyze performance metrics regularly to refine
+                    strategies, identify growth opportunities, and ensure
+                    campaigns align with brand goals. My approach balances
+                    creativity and data to drive consistent results across
+                    platforms.
+                </Text>
+            </Column>
+            <Column>
+                <WorkExperienceImgDesktop />
+            </Column>
         </Container>
+        <TrustedCompanies exclude="GOAIRHEADS" />
+        <LetsWorkTogether />
     </man>
 </Layout>

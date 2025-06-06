@@ -8,7 +8,7 @@ import { base_url } from "../../utils/global";
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="es">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -62,6 +62,23 @@ import { base_url } from "../../utils/global";
 			rel="stylesheet"
 			href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;700;900&display=swap"
 		/>
+		<link
+			rel="alternate"
+			hreflang="es"
+			href="https://robertriera.com/es/"
+		/>
+		<script
+			async
+			src="https://www.googletagmanager.com/gtag/js?id=G-BBG66GM7V0"
+		></script>
+		<script is:inline>
+			window.dataLayer = window.dataLayer || [];
+			function gtag() {
+				dataLayer.push(arguments);
+			}
+			gtag("js", new Date());
+			gtag("config", "G-BBG66GM7V0");
+		</script>
 	</head>
 	<body>
 		<HeaderDesktop />

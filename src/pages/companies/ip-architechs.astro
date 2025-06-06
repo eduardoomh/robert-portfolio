@@ -14,6 +14,8 @@ import LetsWorkTogether from "../../views/contact/LetsWorkTogether.astro";
 import TrustedCompanies from "../../views/companies/TrustedCompanies.astro";
 import CountryCompany from "../../views/companies/CountryCompany.astro";
 import { workExperience } from "../../data/experience";
+import WorkExperienceImgMobile from "../../components/experience/WorkExperienceImgMobile.astro";
+import WorkExperienceImgDesktop from "../../components/experience/WorkExperienceImgDesktop.astro";
 ---
 
 <Layout>
@@ -26,7 +28,7 @@ import { workExperience } from "../../data/experience";
                     visible="mobile"
                 />
                 <CustomImg
-                    src="/images/companies/mobile/ip-architechs-mobile.png"
+                    src="/images/companies/mobile/ip-architechs-mobile.webp"
                     visible="mobile"
                     width="100%"
                 />
@@ -55,7 +57,7 @@ import { workExperience } from "../../data/experience";
                     visible="desktop"
                 />
                 <CustomImg
-                    src="/images/companies/ip-architechs-desktop.png"
+                    src="/images/companies/ip-architechs-desktop.webp"
                     visible="desktop"
                     width="90%"
                 />
@@ -96,11 +98,7 @@ import { workExperience } from "../../data/experience";
                 <Subtitle>Achievements during my time at IP Architechs</Subtitle
                 >
                 <Divider />
-                <CustomImg
-                    src="/images/my-work-experience-mobile.png"
-                    visible="mobile"
-                    width="100%"
-                />
+                <WorkExperienceImgMobile />
                 <Text>
                     I currently serve as the Chief Marketing Officer,
                     responsible for scaling results through SEO, automation,
@@ -116,11 +114,7 @@ import { workExperience } from "../../data/experience";
                 </Text>
             </Column>
             <Column>
-                <CustomImg
-                    src="/images/work-experience-desktop.png"
-                    visible="desktop"
-                    width="80%"
-                />
+                <WorkExperienceImgDesktop />
             </Column>
         </Container>
         <TrustedCompanies exclude="IP Architechs" />

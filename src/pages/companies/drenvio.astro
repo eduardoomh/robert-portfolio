@@ -14,15 +14,21 @@ import LetsWorkTogether from "../../views/contact/LetsWorkTogether.astro";
 import TrustedCompanies from "../../views/companies/TrustedCompanies.astro";
 import CountryCompany from "../../views/companies/CountryCompany.astro";
 import { workExperience } from "../../data/experience";
+import WorkExperienceImgDesktop from "../../components/experience/WorkExperienceImgDesktop.astro";
+import WorkExperienceImgMobile from "../../components/experience/WorkExperienceImgMobile.astro";
 ---
 
 <Layout>
     <man view-transition-name="page">
         <Container columns={2}>
             <Column>
-                <CountryCompany label="Monterrey, México" country="MX" visible="mobile" />
+                <CountryCompany
+                    label="Monterrey, México"
+                    country="MX"
+                    visible="mobile"
+                />
                 <CustomImg
-                    src="/images/companies/mobile/drenvio-mobile.png"
+                    src="/images/companies/mobile/drenvio-mobile.webp"
                     visible="mobile"
                     width="100%"
                 />
@@ -44,9 +50,13 @@ import { workExperience } from "../../data/experience";
                 </CustomButton>
             </Column>
             <Column verticalAlign="vertical-center">
-                <CountryCompany label="Monterrey, México" country="MX" visible="desktop" />
+                <CountryCompany
+                    label="Monterrey, México"
+                    country="MX"
+                    visible="desktop"
+                />
                 <CustomImg
-                    src="/images/companies/drenvio-desktop.png"
+                    src="/images/companies/drenvio-desktop.webp"
                     visible="desktop"
                     width="90%"
                 />
@@ -61,9 +71,7 @@ import { workExperience } from "../../data/experience";
                 <br />
                 {
                     workExperience
-                        ?.filter((item: any) =>
-                            item.link.includes("drenvio"),
-                        )
+                        ?.filter((item: any) => item.link.includes("drenvio"))
                         .map((item: any) => (
                             <ItemExperience
                                 label={item.label}
@@ -86,11 +94,7 @@ import { workExperience } from "../../data/experience";
                 <Title>My work details</Title>
                 <Subtitle>Achievements during my time at Drenvio</Subtitle>
                 <Divider />
-                <CustomImg
-                    src="/images/my-work-experience-mobile.png"
-                    visible="mobile"
-                    width="100%"
-                />
+                <WorkExperienceImgMobile />
                 <Text>
                     I led digital marketing strategies that drove traffic and
                     customer acquisition, optimized conversion funnels, and
@@ -105,11 +109,7 @@ import { workExperience } from "../../data/experience";
                 </Text>
             </Column>
             <Column>
-                <CustomImg
-                    src="/images/work-experience-desktop.png"
-                    visible="desktop"
-                    width="80%"
-                />
+                <WorkExperienceImgDesktop />
             </Column>
         </Container>
         <TrustedCompanies exclude="Drenvio" />

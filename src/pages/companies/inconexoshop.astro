@@ -14,30 +14,48 @@ import LetsWorkTogether from "../../views/contact/LetsWorkTogether.astro";
 import TrustedCompanies from "../../views/companies/TrustedCompanies.astro";
 import CountryCompany from "../../views/companies/CountryCompany.astro";
 import { workExperience } from "../../data/experience";
+import WorkExperienceImgDesktop from "../../components/experience/WorkExperienceImgDesktop.astro";
+import WorkExperienceImgMobile from "../../components/experience/WorkExperienceImgMobile.astro";
 ---
 
 <Layout>
     <man view-transition-name="page">
         <Container columns={2}>
             <Column>
-                <CountryCompany label="Bogotá, Colombia" country="CO" visible="mobile" />
+                <CountryCompany
+                    label="Bogotá, Colombia"
+                    country="CO"
+                    visible="mobile"
+                />
                 <CustomImg
-                    src="/images/companies/mobile/inconexoshop-mobile.png"
+                    src="/images/companies/mobile/inconexoshop-mobile.webp"
                     visible="mobile"
                     width="100%"
                 />
                 <MainTitle>Inconexo Shop</MainTitle>
-                <Subtitle>Ecommerce focused on tech products and accessories.</Subtitle
+                <Subtitle
+                    >Ecommerce focused on tech products and accessories.</Subtitle
                 >
                 <Divider />
                 <Text>
-                    Inconexo Shop is an eCommerce platform specializing in cutting-edge tech products and accessories, from smart devices and gadgets to essential peripherals. The brand focuses on delivering high-quality, curated items with a seamless online shopping experience, fast shipping, and reliable customer support. Its goal is to make the latest tech accessible and convenient for everyday users and enthusiasts alike.
+                    Inconexo Shop is an eCommerce platform specializing in
+                    cutting-edge tech products and accessories, from smart
+                    devices and gadgets to essential peripherals. The brand
+                    focuses on delivering high-quality, curated items with a
+                    seamless online shopping experience, fast shipping, and
+                    reliable customer support. Its goal is to make the latest
+                    tech accessible and convenient for everyday users and
+                    enthusiasts alike.
                 </Text>
             </Column>
             <Column verticalAlign="vertical-center">
-                <CountryCompany label="Bogotá, Colombia" country="CO" visible="desktop" />
+                <CountryCompany
+                    label="Bogotá, Colombia"
+                    country="CO"
+                    visible="desktop"
+                />
                 <CustomImg
-                    src="/images/companies/inconexoshop-desktop.png"
+                    src="/images/companies/inconexoshop-desktop.webp"
                     visible="desktop"
                     width="90%"
                 />
@@ -52,9 +70,7 @@ import { workExperience } from "../../data/experience";
                 <br />
                 {
                     workExperience
-                        ?.filter((item: any) =>
-                            item.link.includes("inconexo"),
-                        )
+                        ?.filter((item: any) => item.link.includes("inconexo"))
                         .map((item: any) => (
                             <ItemExperience
                                 label={item.label}
@@ -75,13 +91,11 @@ import { workExperience } from "../../data/experience";
         <Container columns={2}>
             <Column>
                 <Title>My work details</Title>
-                <Subtitle>Achievements during my time at Inconexo Shop</Subtitle>
+                <Subtitle>Achievements during my time at Inconexo Shop</Subtitle
+                >
                 <Divider />
-                <CustomImg
-                    src="/images/my-work-experience-mobile.png"
-                    visible="mobile"
-                    width="100%"
-                />
+
+                <WorkExperienceImgMobile />
                 <Text>
                     I led digital marketing strategies that drove traffic and
                     customer acquisition, optimized conversion funnels, and
@@ -96,11 +110,7 @@ import { workExperience } from "../../data/experience";
                 </Text>
             </Column>
             <Column>
-                <CustomImg
-                    src="/images/work-experience-desktop.png"
-                    visible="desktop"
-                    width="80%"
-                />
+                <WorkExperienceImgDesktop />
             </Column>
         </Container>
         <TrustedCompanies exclude="Inconexo Shop" />

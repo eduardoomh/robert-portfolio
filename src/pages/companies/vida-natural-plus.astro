@@ -12,15 +12,21 @@ import Title from "../../components/basics/Title.astro";
 import LetsWorkTogether from "../../views/contact/LetsWorkTogether.astro";
 import TrustedCompanies from "../../views/companies/TrustedCompanies.astro";
 import CountryCompany from "../../views/companies/CountryCompany.astro";
+import WorkExperienceImgDesktop from "../../components/experience/WorkExperienceImgDesktop.astro";
+import WorkExperienceImgMobile from "../../components/experience/WorkExperienceImgMobile.astro";
 ---
 
 <Layout>
     <man view-transition-name="page">
         <Container columns={2}>
             <Column>
-                <CountryCompany label="Colombia" country="CO" visible="mobile" />
+                <CountryCompany
+                    label="Colombia"
+                    country="CO"
+                    visible="mobile"
+                />
                 <CustomImg
-                    src="/images/companies/mobile/vida-natural-plus-mobile.png"
+                    src="/images/companies/mobile/vida-natural-plus-mobile.webp"
                     visible="mobile"
                     width="100%"
                 />
@@ -38,14 +44,21 @@ import CountryCompany from "../../views/companies/CountryCompany.astro";
                     carefully curated selections, both online and in physical
                     locations.
                 </Text>
-                <CustomButton link="https://vidanaturalplus.com/" type="regular">
+                <CustomButton
+                    link="https://vidanaturalplus.com/"
+                    type="regular"
+                >
                     Website
                 </CustomButton>
             </Column>
             <Column verticalAlign="vertical-center">
-                <CountryCompany label="Colombia" country="CO" visible="desktop" />
+                <CountryCompany
+                    label="Colombia"
+                    country="CO"
+                    visible="desktop"
+                />
                 <CustomImg
-                    src="/images/companies/vida-natural-plus-desktop.png"
+                    src="/images/companies/vida-natural-plus-desktop.webp"
                     visible="desktop"
                     width="90%"
                 />
@@ -54,13 +67,11 @@ import CountryCompany from "../../views/companies/CountryCompany.astro";
         <Container columns={2}>
             <Column>
                 <Title>My work details</Title>
-                <Subtitle>Achievements during my time at Vida Natural Plus</Subtitle>
+                <Subtitle
+                    >Achievements during my time at Vida Natural Plus</Subtitle
+                >
                 <Divider />
-                <CustomImg
-                    src="/images/my-work-experience-mobile.png"
-                    visible="mobile"
-                    width="100%"
-                />
+                <WorkExperienceImgMobile />
                 <Text>
                     I designed their full WordPress website, implemented on-page
                     SEO, and managed their ad campaigns through Google Ads to
@@ -75,11 +86,7 @@ import CountryCompany from "../../views/companies/CountryCompany.astro";
                 </Text>
             </Column>
             <Column>
-                <CustomImg
-                    src="/images/work-experience-desktop.png"
-                    visible="desktop"
-                    width="80%"
-                />
+                <WorkExperienceImgDesktop />
             </Column>
         </Container>
         <TrustedCompanies exclude="Vida Natural Plus" />

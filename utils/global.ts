@@ -1,2 +1,2 @@
-export const base_url = ''
-//export const base_url = '/en'
+//export const base_url = ''
+export const base_url = '/en'

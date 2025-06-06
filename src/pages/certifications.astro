@@ -6,19 +6,50 @@ import CertificationItem from "../views/certifications/CertificationItem.astro";
 import { certificationsList } from "../data/certifications";
 import { base_url } from "../../utils/global";
 import LetsWorkTogether from "../views/contact/LetsWorkTogether.astro";
+import Column from "../components/basics/Column.astro";
+import CustomImg from "../components/basics/CustomImg.astro";
+import MainTitle from "../components/basics/MainTitle.astro";
+import Subtitle from "../components/basics/Subtitle.astro";
+import Divider from "../components/basics/Divider.astro";
 ---
 
 <Layout>
-    <man view-transition-name="page">
-        <Container columns={1}>
-            {certificationsList.map((cert, index) => (
-              <CertificationItem key={index} label={cert.label}>
-                <Text>{cert.description}</Text>
-                <br />
-                <img src={`${base_url}${cert.image}`} width="100%" alt={cert.alt} />
-              </CertificationItem>
-            ))}
-          </Container>
-        <LetsWorkTogether />
-    </man>
+  <man view-transition-name="page">
+    <Container columns={2}>
+      <Column>
+        <CustomImg
+          src="/images/certifications/certification-mobile.webp"
+          visible="mobile"
+          width="100%"
+        />
+        <MainTitle>My Certifications</MainTitle>
+        <Subtitle>A showcase of my professional development and achievements.</Subtitle>
+        <Divider />
+        <Text>
+          Explore the certifications I’ve earned through professional training,
+          courses, and continuous learning. Each one represents a step in my
+          growth and commitment to excellence in my field.
+        </Text>
+      </Column>
+      <Column verticalAlign="vertical-center">
+        <CustomImg
+          src="/images/certifications/certification-desktop.webp"
+          visible="desktop"
+          width="90%"
+        />
+      </Column>
+    </Container>
+    <Container columns={1}>
+      {
+        certificationsList.map((cert, index) => (
+          <CertificationItem key={index} label={cert.label}>
+            <Text>{cert.description}</Text>
+            <br />
+            <img src={`${base_url}${cert.image}`} width="100%" alt={cert.alt} />
+          </CertificationItem>
+        ))
+      }
+    </Container>
+    <LetsWorkTogether />
+  </man>
 </Layout>

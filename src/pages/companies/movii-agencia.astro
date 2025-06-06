@@ -14,15 +14,21 @@ import LetsWorkTogether from "../../views/contact/LetsWorkTogether.astro";
 import TrustedCompanies from "../../views/companies/TrustedCompanies.astro";
 import CountryCompany from "../../views/companies/CountryCompany.astro";
 import { workExperience } from "../../data/experience";
+import WorkExperienceImgDesktop from "../../components/experience/WorkExperienceImgDesktop.astro";
+import WorkExperienceImgMobile from "../../components/experience/WorkExperienceImgMobile.astro";
 ---
 
 <Layout>
     <man view-transition-name="page">
         <Container columns={2}>
             <Column>
-                <CountryCompany label="Colombia" country="CO" visible="mobile" />
+                <CountryCompany
+                    label="Colombia"
+                    country="CO"
+                    visible="mobile"
+                />
                 <CustomImg
-                    src="/images/companies/mobile/movii-agencia-mobile.png"
+                    src="/images/companies/mobile/movii-agencia-mobile.webp"
                     visible="mobile"
                     width="100%"
                 />
@@ -40,9 +46,13 @@ import { workExperience } from "../../data/experience";
                 </Text>
             </Column>
             <Column verticalAlign="vertical-center">
-                <CountryCompany label="Colombia" country="CO" visible="desktop" />
+                <CountryCompany
+                    label="Colombia"
+                    country="CO"
+                    visible="desktop"
+                />
                 <CustomImg
-                    src="/images/companies/movii-agencia-desktop.png"
+                    src="/images/companies/movii-agencia-desktop.webp"
                     visible="desktop"
                     width="90%"
                 />
@@ -57,9 +67,7 @@ import { workExperience } from "../../data/experience";
                 <br />
                 {
                     workExperience
-                        ?.filter((item: any) =>
-                            item.link.includes("movii"),
-                        )
+                        ?.filter((item: any) => item.link.includes("movii"))
                         .map((item: any) => (
                             <ItemExperience
                                 label={item.label}
@@ -80,13 +88,10 @@ import { workExperience } from "../../data/experience";
         <Container columns={2}>
             <Column>
                 <Title>My work details</Title>
-                <Subtitle>Achievements during my time at Movii Agencia</Subtitle>
+                <Subtitle>Achievements during my time at Movii Agencia</Subtitle
+                >
                 <Divider />
-                <CustomImg
-                    src="/images/my-work-experience-mobile.png"
-                    visible="mobile"
-                    width="100%"
-                />
+                <WorkExperienceImgMobile />
                 <Text>
                     I developed and launched advertising campaigns that
                     generated additional revenue, while also building strategic
@@ -101,11 +106,7 @@ import { workExperience } from "../../data/experience";
                 </Text>
             </Column>
             <Column>
-                <CustomImg
-                    src="/images/work-experience-desktop.png"
-                    visible="desktop"
-                    width="80%"
-                />
+                <WorkExperienceImgDesktop />
             </Column>
         </Container>
         <TrustedCompanies exclude="Movii Agencia" />
