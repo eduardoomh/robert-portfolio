@@ -22,7 +22,7 @@ export default function CompaniesList(props: Props) {
                                     ref={(el) => (el as HTMLAnchorElement | null)?.setAttribute('viewTransition', '')}
                                 >
                                     <img
-                                        src={item.image}
+                                        src={`${base_url}${item.image}`}
                                         alt={item.company}
                                         width="287"
                                         height="157"

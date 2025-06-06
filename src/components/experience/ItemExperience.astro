@@ -48,7 +48,7 @@ const { label, period, company, link } = Astro.props;
         </svg>
     </div>
 
-    <a class="experience-item__content" href={`${base_url}${link}`}>
+    <a class="experience-item__content" href={link ? `${base_url}${link}` : ''}>
         <h3>{label}</h3>
         <Divider />
         <p class="experience-item__content__period">{period}</p>

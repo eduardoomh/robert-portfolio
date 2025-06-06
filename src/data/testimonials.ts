@@ -1,6 +1,6 @@
  export const testimonials = [
     {
-      user: "Brian Bitter - SEO en Scaleup Agency",
+      user: "Brian Bitter - CEO en Scaleup Agency",
       image: "/images/testimonials/brian-bitter.png",
       text: "Working with Robert was an exceptional experience. His creativity and expertise in digital marketing were crucial to the success of our business. His dedication and skills helped us effectively achieve our growth objectives. Robert’s strategic guidance and proactive approach were invaluable in driving our success."
     },

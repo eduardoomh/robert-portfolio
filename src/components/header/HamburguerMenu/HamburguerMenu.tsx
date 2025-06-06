@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import styles from './styles.module.css'
 import SocialIcons from '../social-icons/SocialIcons';
+import { base_url } from '../../../../utils/global';
 
 export default function HamburgerMenu() {
     const [isOpen, setIsOpen] = useState(false);
@@ -33,11 +34,11 @@ export default function HamburgerMenu() {
             }
             <div className={isOpen ? `${styles.bottomSheet} ${styles.bottomSheetOpen}` : styles.bottomSheet}>
                 <ul className={styles.menuOptions}>
-                    <li><a href='/'>Home</a></li>
-                    <li><a href='/#experience'>Experience</a></li>
-                    <li><a href='/#skills'>Skills</a></li>
-                    <li><a href='/#contact'>Contact</a></li>
-                    <li><a href='/blog'>Blog</a></li>
+                    <li><a href={`${base_url}/`}>Home</a></li>
+                    <li><a href={`${base_url}/#experience`}>Experience</a></li>
+                    <li><a href={`${base_url}/#skills`}>Skills</a></li>
+                    <li><a href={`${base_url}/#contact`}>Contact</a></li>
+                    <li><a href={`${base_url}/blog`}>Blog</a></li>
                 </ul>
                 <SocialIcons />
             </div>
