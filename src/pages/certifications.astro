@@ -23,7 +23,9 @@ import Divider from "../components/basics/Divider.astro";
           width="100%"
         />
         <MainTitle>My Certifications</MainTitle>
-        <Subtitle>A showcase of my professional development and achievements.</Subtitle>
+        <Subtitle
+          >A showcase of my professional development and achievements.</Subtitle
+        >
         <Divider />
         <Text>
           Explore the certifications I’ve earned through professional training,
@@ -35,7 +37,9 @@ import Divider from "../components/basics/Divider.astro";
         <CustomImg
           src="/images/certifications/certification-desktop.webp"
           visible="desktop"
-          width="90%"
+          width="434"
+          height="358"
+          alt="certifications"
         />
       </Column>
     </Container>
@@ -45,7 +49,12 @@ import Divider from "../components/basics/Divider.astro";
           <CertificationItem key={index} label={cert.label}>
             <Text>{cert.description}</Text>
             <br />
-            <img src={`${base_url}${cert.image}`} width="100%" alt={cert.alt} />
+            <img
+              src={`${base_url}${cert.image}`}
+              width="100%"
+              alt={cert.alt}
+              loading="lazy"
+            />
           </CertificationItem>
         ))
       }

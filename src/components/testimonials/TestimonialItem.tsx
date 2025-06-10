@@ -12,7 +12,13 @@ const TestimonialItem = (props: PropsWithChildren<Props>) => {
         <article className={styles.testimonialCard}>
             <section className={styles.UserInfo}>
                 <div className={styles.imgContainer}>
-                    <img src={`${base_url}${image}`} width={60} height={60} alt={user} />
+                    <img 
+                        src={`${base_url}${image}`} 
+                        width={60} 
+                        height={60}
+                        alt={user} 
+                        loading="lazy" 
+                    />
                 </div>
                 <div className={styles.profileData}>
                     <h3>{user}</h3>
