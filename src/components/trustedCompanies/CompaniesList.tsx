@@ -23,9 +23,10 @@ export default function CompaniesList(props: Props) {
                                 >
                                     <img
                                         src={`${base_url}${item.image}`}
-                                        alt={item.company}
-                                        width="287"
-                                        height="157"
+                                        alt={item.alt}
+                                        width="300"
+                                        height="168"
+                                        loading="lazy"
                                     />
                                     <h3 className={styles.companyItem_title}>{item.company}</h3>
                                 </a>

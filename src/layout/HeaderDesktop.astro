@@ -10,13 +10,27 @@ import CountryOption from "../components/header/countryOption/ContryOption";
     <nav class="header-nav">
         <Logo />
         <ul class="header-menu">
-            <MenuLink client:load path="/" label="Home" />
-            <MenuLink client:load path="/#experience" label="Experience" />
-            <MenuLink client:load path="/#skills" label="Skills" />
-            <MenuLink client:load path="/#contact" label="Contact" />
-            <MenuLink client:load path="/blog" label="Blog" />
-            <Socialicons />
-            <CountryOption client:load isDesktop={true} />
+            <li>
+                <MenuLink client:load path="/" label="Home" />
+            </li>
+            <li>
+                <MenuLink client:load path="/#experience" label="Experience" />
+            </li>
+            <li>
+                <MenuLink client:load path="/#skills" label="Skills" />
+            </li>
+            <li>
+                <MenuLink client:load path="/#contact" label="Contact" />
+            </li>
+            <li>
+                <MenuLink client:load path="/blog" label="Blog" />
+            </li>
+            <li>
+                <Socialicons />
+            </li>
+            <li>
+                <CountryOption client:load isDesktop={true} />
+            </li>
         </ul>
     </nav>
 </header>

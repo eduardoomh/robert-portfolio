@@ -5,3 +5,9 @@
     gap: 1rem;
     margin-top: 2.5rem;
 }
+
+.socialIcons a:focus-visible {
+  outline: 2px solid #ffffff;
+  outline-offset: 4px;
+  border-radius: 4px;
+}

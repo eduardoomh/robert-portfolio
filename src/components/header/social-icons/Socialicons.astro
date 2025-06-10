@@ -1,13 +1,19 @@
 ---
-interface props{
-    align?: string
+interface props {
+    align?: string;
 }
 
 const { align } = Astro.props;
 ---
 
 <section class=`social-icons ${align === 'flex-start' ? 'align-icons' : ''}`>
-    <a href="https://wa.link/s7kfy4" target="_blank" data-tooltip="WhatsApp">
+    <a
+        href="https://wa.link/s7kfy4"
+        target="_blank"
+        data-tooltip="WhatsApp"
+        aria-label="Contact me on WhatsApp"
+        rel="noopener noreferrer"
+    >
         <svg
             width="20"
             height="20"
@@ -26,6 +32,8 @@ const { align } = Astro.props;
         href="https://www.instagram.com/roberterh96/"
         target="_blank"
         data-tooltip="Instagram"
+        aria-label="Contact me on Instagram"
+        rel="noopener noreferrer"
     >
         <svg
             width="20"
@@ -43,6 +51,8 @@ const { align } = Astro.props;
         href="https://www.facebook.com/roberterh1996"
         target="_blank"
         data-tooltip="Facebook"
+        aria-label="Contact me on Facebook"
+        rel="noopener noreferrer"
     >
         <svg
             width="15"
@@ -59,7 +69,9 @@ const { align } = Astro.props;
     <a
         href="https://www.linkedin.com/in/robertriera"
         target="_blank"
-        data-tooltip="Linkedin"
+        data-tooltip="LinkedIn"
+        aria-label="Contact me on LinkedIn"
+        rel="noopener noreferrer"
     >
         <svg
             width="20"
@@ -113,7 +125,13 @@ const { align } = Astro.props;
         visibility: visible;
     }
 
-    .align-icons{
+    .align-icons {
         justify-content: flex-start;
+    }
+
+    .social-icons a:focus-visible {
+        outline: 2px solid #ffffff;
+        outline-offset: 4px;
+        border-radius: 4px;
     }
 </style>

@@ -21,11 +21,20 @@ import Socialicons from "../components/header/social-icons/Socialicons.astro";
       <h3>Projects</h3>
       <Divider />
       <ul class="footer-menu-block">
-        <li><CustomLink href="/companies/vida-natural-plus">Vida natural plus</CustomLink></li>
-        <li><CustomLink href="/companies/all-inchess">All inchess</CustomLink></li>
+        <li>
+          <CustomLink href="/companies/vida-natural-plus"
+            >Vida natural plus</CustomLink>
+        </li>
+        <li>
+          <CustomLink href="/companies/all-inchess">All inchess</CustomLink>
+        </li>
         <li><CustomLink href="/companies/drenvio">Drenvio</CustomLink></li>
-        <li><CustomLink href="/companies/ip-architechs">IP Architechs</CustomLink></li>
-        <li><CustomLink href="/companies/goairheads">GoAirHeads</CustomLink></li>
+        <li>
+          <CustomLink href="/companies/ip-architechs">IP Architechs</CustomLink>
+        </li>
+        <li>
+          <CustomLink href="/companies/goairheads">GoAirHeads</CustomLink>
+        </li>
       </ul>
     </section>
 
@@ -41,8 +50,8 @@ import Socialicons from "../components/header/social-icons/Socialicons.astro";
           <a
             href="https://drive.google.com/file/d/17El16Mav3nYsw0XJYdF0NSyz4EHrU4K3/view"
             target="_blank"
-            rel="noopener noreferrer"
-          >Curriculum</a>
+            rel="noopener noreferrer">Curriculum</a
+          >
         </li>
       </ul>
     </section>
@@ -56,7 +65,9 @@ import Socialicons from "../components/header/social-icons/Socialicons.astro";
             marketing@robertriera.com
           </a>
         </li>
-        <Socialicons align="flex-start" />
+        <li>
+          <Socialicons align="flex-start" />
+        </li>
       </ul>
     </section>
   </div>
@@ -68,67 +79,67 @@ import Socialicons from "../components/header/social-icons/Socialicons.astro";
 </footer>
 
 <style>
+  .footer-layout {
+    padding: 64px 16px;
+  }
+
+  .footer-menu-block {
+    color: var(--primary-white);
+    list-style: none;
+    padding: 0;
+  }
+
+  .footer-menu-block li {
+    display: flex;
+    align-items: center;
+    height: 36px;
+    color: var(--primary-white);
+    cursor: pointer;
+  }
+
+  .footer-menu-block li a {
+    text-decoration-line: none;
+    color: inherit;
+    transition: color 0.2s ease-in-out;
+  }
+
+  .footer-menu-block li a:hover {
+    color: var(--secondary-green);
+    text-decoration-line: underline;
+  }
+
+  .footer-menu-sections {
+    margin-bottom: 3rem;
+    color: var(--primary-white);
+  }
+
+  .footer-bottom p {
+    text-align: center;
+    color: var(--primary-white);
+    margin-top: 2rem;
+  }
+
+  @media (min-width: 767px) {
     .footer-layout {
-        padding: 64px 16px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding-left: 0;
+      padding-right: 0;
+    }
+    .footer-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      grid-template-rows: 1fr;
+      gap: 3rem;
+      width: 100vw;
+      max-width: 1000px;
     }
 
-    .footer-menu-block {
-        color: var(--primary-white);
-        list-style: none;
-        padding: 0;
+    .footer-bottom {
+      width: 100%;
+      max-width: 1000px;
     }
-
-    .footer-menu-block li {
-        display: flex;
-        align-items: center;
-        height: 36px;
-        color: var(--primary-white);
-        cursor: pointer;
-    }
-
-    .footer-menu-block li a {
-        text-decoration-line: none;
-        color: inherit;
-        transition: color 0.2s ease-in-out;
-    }
-
-    .footer-menu-block li a:hover {
-        color: var(--secondary-green);
-        text-decoration-line: underline;
-    }
-
-    .footer-menu-sections {
-        margin-bottom: 3rem;
-        color: var(--primary-white);
-    }
-
-    .footer-bottom p {
-        text-align: center;
-        color: var(--primary-white);
-        margin-top: 2rem;
-    }
-
-    @media (min-width: 767px) {
-        .footer-layout {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            padding-left: 0;
-            padding-right: 0;
-        }
-        .footer-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr 1fr 1fr;
-            grid-template-rows: 1fr;
-            gap: 3rem;
-            width: 100vw;
-            max-width: 1000px;
-        }
-
-        .footer-bottom {
-            width: 100%;
-            max-width: 1000px;
-        }
-    }
+  }
 </style>
