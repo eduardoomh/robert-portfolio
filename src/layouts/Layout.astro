@@ -67,11 +67,7 @@ import { base_url } from "../../utils/global";
 			hreflang="en"
 			href="https://robertriera.com/en/"
 		/>
-		<link 
-			rel="alternate" 
-			hreflang="es" 
-			href="https://robertriera.com/" 
-		/>
+		<link rel="alternate" hreflang="es" href="https://robertriera.com/" />
 		<script
 			async
 			src="https://www.googletagmanager.com/gtag/js?id=G-BBG66GM7V0"
@@ -83,6 +79,23 @@ import { base_url } from "../../utils/global";
 			}
 			gtag("js", new Date());
 			gtag("config", "G-BBG66GM7V0");
+		</script>
+		<script is:inline>
+			window.dataLayer = window.dataLayer || [];
+			function gtag() {
+				dataLayer.push(arguments);
+			}
+
+			window.addEventListener("DOMContentLoaded", function () {
+				const script = document.createElement("script");
+				script.src =
+					"https://www.googletagmanager.com/gtag/js?id=G-BBG66GM7V0";
+				script.async = true;
+				document.head.appendChild(script);
+
+				gtag("js", new Date());
+				gtag("config", "G-BBG66GM7V0");
+			});
 		</script>
 	</head>
 	<body>

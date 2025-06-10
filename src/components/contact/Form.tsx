@@ -2,9 +2,9 @@ import { toast, ToastContainer } from "react-toastify";
 import ItemForm from "./ItemForm";
 import { useState, type PropsWithChildren } from "react";
 import { sendEmail, type EmailValuesI } from "../../services/EmailSend";
-import HCaptcha from "@hcaptcha/react-hcaptcha";
+import LazyCaptcha from "./LazyCaptcha";
 
-interface Props {}
+interface Props { }
 
 export default function Form(props: PropsWithChildren<Props>) {
   const { children } = props;
@@ -72,7 +72,7 @@ export default function Form(props: PropsWithChildren<Props>) {
       const emailSended = await sendEmail({
         ...values,
         captcha_token: captchaToken
-    });
+      });
 
       if (emailSended.code !== 200) {
         setLoading(false);
@@ -144,11 +144,9 @@ export default function Form(props: PropsWithChildren<Props>) {
       />
 
       <div style={{ margin: '1rem 0' }}>
-        <HCaptcha
-          sitekey="220c130c-d160-4790-8a38-dbec3c74bab2"
+        <LazyCaptcha
           onVerify={handleCaptcha}
           onExpire={() => setCaptchaToken(null)}
-          theme="light"
         />
       </div>
 
