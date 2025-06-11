@@ -15,7 +15,8 @@ import Text from "../../components/basics/Text.astro";
         <CustomImg
             src="/images/work-together-mobile-version.webp"
             visible="mobile"
-            width="100%"
+            width="400"
+            height="400"
         />
         <br />
         <Title>Let’s work together</Title>
@@ -26,11 +27,7 @@ import Text from "../../components/basics/Text.astro";
             relationships. Let’s make great things happen!
         </Text>
         <Form client:load>
-            <CustomButton
-                link=""
-                type="send"
-                submit={true}
-            >
+            <CustomButton link="" type="send" submit={true}>
                 Contact me
             </CustomButton>
         </Form>

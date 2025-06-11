@@ -16,16 +16,18 @@ import LetsWorkTogether from "../views/contact/LetsWorkTogether.astro";
 import Testimonials from "../views/testimonials/Testimonials.astro";
 import TrustedCompanies from "../views/companies/TrustedCompanies.astro";
 import AboutMeStats from "../views/aboutMe/AboutMeStats.astro";
-
 ---
 
 <Layout>
 	<Container columns={2}>
 		<Column>
 			<CustomImg
-				src="/images/robert-banner-mobile.webp"
+				src="/images/robert-banner-mobile-570x500.webp"
 				visible="mobile"
-				width="100%"
+				width="570"
+				height="500"
+				lazy={false}
+				alt="Robert riera presentation"
 			/>
 			<MainTitle>Robert Riera</MainTitle>
 			<Subtitle>Chief Marketing officer</Subtitle>
@@ -46,21 +48,23 @@ import AboutMeStats from "../views/aboutMe/AboutMeStats.astro";
 		</Column>
 		<Column>
 			<CustomImg
-				src="/images/robert-banner.webp"
+				src="/images/robert-banner-469x432.webp"
 				visible="desktop"
 				width="469"
 				height="432"
+				lazy={false}
 				alt="Robert-in-presentation-banner"
 			/>
 		</Column>
 	</Container>
 
 	<Container columns={2} id="about-me">
-		<Column >
+		<Column>
 			<CustomImg
 				src="/images/robert-in-computer-mobile.webp"
 				visible="mobile"
-				width="100%"
+				width="400"
+				height="400"
 			/>
 			<Title>About me</Title>
 			<Subtitle>Why am I the missing gear your company needs?</Subtitle>
@@ -84,10 +88,11 @@ import AboutMeStats from "../views/aboutMe/AboutMeStats.astro";
 		</Column>
 		<Column verticalAlign="vertical-center">
 			<CustomImg
-				src="/images/robert-in-computer-desktop-4.webp"
+				src="/images/robert-in-computer-desktop-469x521.webp"
 				visible="desktop"
 				width="469"
 				height="521"
+				lazy={false}
 				alt="robert-working-in-a-computer"
 			/>
 		</Column>
@@ -98,15 +103,17 @@ import AboutMeStats from "../views/aboutMe/AboutMeStats.astro";
 			<Title>My skills</Title>
 			<Subtitle>My Strongest abilities</Subtitle>
 			<Divider />
-			<CustomImg 
-				src="/images/banner-english-version.webp" 
-				visible="desktop" 
+			<CustomImg
+				src="/images/banner-english-version.webp"
+				visible="desktop"
 				alt="My-Strongest-abilities"
-				hideTransition={true} 
+				hideTransition={true}
 			/>
 			<CustomImg
 				src="/images/banner-english-version-mobile.webp"
 				visible="mobile"
+				width="400"
+				height="400"
 			/>
 			<br />
 			<SkillList />

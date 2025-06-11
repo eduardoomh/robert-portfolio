@@ -16,19 +16,17 @@
             font-size: 16px;
         }
 
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(-30px); /* Ahora baja en lugar de subir */
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        .animate-fade-in {
+            animation: appear 0.3s ease-out;
         }
 
-        .animate-fade-in {
-            animation: fadeIn 0.3s ease-out;
+        @keyframes appear {
+            from {
+                filter: blur(4px);
+            }
+            to {
+                filter: blur(0);
+            }
         }
     }
 </style>

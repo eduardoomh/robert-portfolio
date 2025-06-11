@@ -2,16 +2,25 @@
 import { base_url } from "../../../utils/global";
 
 /* Recibimos las props `src`, `visible` y `width` */
-const { src, visible, width, height, hideTransition, alt } = Astro.props;
+const {
+  src,
+  visible,
+  width,
+  height,
+  hideTransition,
+  alt,
+  lazy = true,
+
+} = Astro.props;
 ---
 
 <img
   src={`${base_url}${src}`}
-  class={`${hideTransition ? "" : "image-transition"} ${visible === "mobile" ? "mobile-visible" : "desktop-visible"}`}
+  class={`${hideTransition ? "" : "image-transition"} ${visible === "mobile" ? "mobile-visible mobile-size" : "desktop-visible"}`}
   alt={alt || "Imagen responsive"}
   width={width || "100%"}
   height={height || "auto"}
-  loading="lazy"
+  loading={lazy === false ? "eager" : "lazy"}
 />
 
 <style>
@@ -50,6 +59,11 @@ const { src, visible, width, height, hideTransition, alt } = Astro.props;
   .image-transition:hover {
     transform: translateY(0) rotate(2deg); /* Rota la imagen 2 grados */
     transition: transform 0.15s ease-out; /* Transición rápida de la inclinación */
+  }
+
+  .mobile-size {
+    max-width: 100%;
+    height: auto;
   }
 </style>
 
