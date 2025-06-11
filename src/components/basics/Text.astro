@@ -1,32 +1,48 @@
-<p class="text animate-fade-in">
+---
+const { hide } = Astro.props;
+---
+
+<p class={`text animate-fade-in ${hide === 'desktop' ? 'hide-desktop' : ''} ${hide === 'mobile' ? 'hide-mobile' : ''}`}>
     <slot />
 </p>
 
 <style>
+.text {
+    font-family: "Rubik", sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    margin: 10px 0;
+    color: var(--primary-white);
+}
+
+@media (min-width: 767px) {
     .text {
-        font-family: "Rubik", sans-serif;
-        font-weight: 300;
         font-size: 16px;
-        margin: 10px 0;
-        color: var(--primary-white);
     }
 
-    @media (min-width: 767px) {
-        .text {
-            font-size: 16px;
-        }
+    .animate-fade-in {
+        animation: appear 0.3s ease-out;
+    }
 
-        .animate-fade-in {
-            animation: appear 0.3s ease-out;
+    @keyframes appear {
+        from {
+            filter: blur(4px);
         }
-
-        @keyframes appear {
-            from {
-                filter: blur(4px);
-            }
-            to {
-                filter: blur(0);
-            }
+        to {
+            filter: blur(0);
         }
     }
+
+    /* Ocultar en desktop */
+    .hide-desktop {
+        display: none;
+    }
+}
+
+@media (max-width: 766px) {
+    /* Ocultar en mobile */
+    .hide-mobile {
+        display: none;
+    }
+}
 </style>

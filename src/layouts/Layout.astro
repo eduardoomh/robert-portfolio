@@ -71,17 +71,24 @@ import { base_url } from "../../utils/global";
 			href="https://robertriera.com/en/"
 		/>
 		<link rel="alternate" hreflang="es" href="https://robertriera.com/" />
-		<script
-			async
-			src="https://www.googletagmanager.com/gtag/js?id=G-BBG66GM7V0"
-		></script>
+
+		<!-- Google Tag (gtag.js) -->
 		<script is:inline>
 			window.dataLayer = window.dataLayer || [];
 			function gtag() {
 				dataLayer.push(arguments);
+		 }
+		</script>
+
+		<script is:inline>
+			// Carga diferida solo después de interacción o visibilidad
+			if ("requestIdleCallback" in window) {
+				requestIdleCallback(loadGtag);
+			} else {
+				window.addEventListener("load", loadGtag);
 			}
 
-			window.addEventListener("DOMContentLoaded", function () {
+			function loadGtag() {
 				const script = document.createElement("script");
 				script.src =
 					"https://www.googletagmanager.com/gtag/js?id=G-BBG66GM7V0";
@@ -90,7 +97,7 @@ import { base_url } from "../../utils/global";
 
 				gtag("js", new Date());
 				gtag("config", "G-BBG66GM7V0");
-			});
+			}
 		</script>
 	</head>
 	<body>
