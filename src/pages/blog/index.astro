@@ -1,0 +1,110 @@
+---
+import Column from "../../components/basics/Column.astro";
+import Container from "../../components/basics/Container.astro";
+import CustomImg from "../../components/basics/CustomImg.astro";
+import Divider from "../../components/basics/Divider.astro";
+import MainTitle from "../../components/basics/MainTitle.astro";
+import Subtitle from "../../components/basics/Subtitle.astro";
+import Title from "../../components/basics/Title.astro";
+import Text from "../../components/basics/Text.astro";
+import Layout from "../../layouts/Layout.astro";
+import { base_url } from "../../../utils/global";
+
+let posts = [];
+
+try {
+  const res = await fetch("https://api.robertriera.com/api/blog");
+
+  if (!res.ok) {
+    console.error("Error fetching posts:", res.status, res.statusText);
+  } else {
+    posts = await res.json();
+  }
+} catch (err) {
+  console.error("Error en el fetch:", err);
+}
+---
+
+<Layout>
+    <main view-transition-name="page">
+        <Container columns={2}>
+            <Column>
+                <CustomImg
+                    src="/images/robert-blog-mobile.webp"
+                    visible="mobile"
+                    width="400"
+                    height="400"
+                />
+                <MainTitle>Robert´s Blog</MainTitle>
+                <Subtitle>Marketing and social media</Subtitle>
+                <Divider />
+                <Text>
+                    Welcome to my blog, where I share insights, strategies, and tips on digital marketing, branding, and growth. As a Chief Marketing Officer with extensive experience, I’m passionate about helping businesses optimize their marketing efforts to drive results.
+                </Text>
+            </Column>
+            <Column verticalAlign="vertical-center">
+                <CustomImg
+                    src="/images/robert-blog.webp"
+                    visible="desktop"
+                    width="422"
+                    height="281"
+                    alt="robert-blog"
+                />
+            </Column>
+        </Container>
+
+        <Container columns={1}>
+            <Title>Latest Blog Posts</Title>
+            <Divider />
+            <ul class="blog-list">
+                {posts?.length > 0 ? (
+                    posts.map((post: PostI) => (
+                        <li class="blog-item">
+                            <div class="image-wrapper">
+                                <img src={post.thumbnail} width="400" height="auto" />
+                            </div>
+                            <div>
+                            <a href={`${base_url}/blog/${post.slug}`} style="font-weight: bold;">
+                                <Subtitle>{post.title}</Subtitle>
+                            </a>
+                            <div class="excerpt">
+                                <p set:html={post.excerpt} />
+                            </div>
+                           
+                            </div>
+                        </li>
+                        <br/>
+                    ))
+                ) : (
+                    <li>No blog posts found.</li>
+                )}
+            </ul>
+        </Container>
+    </main>
+</Layout>
+
+<style>
+    .excerpt{
+        color: white;
+    }
+    .blog-list{
+        margin: 0;
+        padding: 0;
+    }
+    .blog-item{
+        display: flex;
+        gap: 2rem;
+        margin: 0;
+        padding: 0;
+    }
+    .image-wrapper img {
+        filter: grayscale(100%);
+    }
+    .blog-item a {
+        color: inherit;
+        text-decoration: underline;
+        text-decoration-color: #c0ff81;
+        text-underline-offset: 3px;
+        }
+    
+</style>

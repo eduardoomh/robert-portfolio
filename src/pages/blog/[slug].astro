@@ -1,0 +1,110 @@
+---
+import Container from "../../components/basics/Container.astro";
+import Title from "../../components/basics/Title.astro";
+import Text from "../../components/basics/Text.astro";
+import Layout from "../../layouts/Layout.astro";
+import MainTitle from "../../components/basics/MainTitle.astro";
+import CustomImg from "../../components/basics/CustomImg.astro";
+import Subtitle from "../../components/basics/Subtitle.astro";
+import Divider from "../../components/basics/Divider.astro";
+import Column from "../../components/basics/Column.astro";
+import CountryCompany from "../../views/companies/CountryCompany.astro";
+import CustomButton from "../../components/basics/CustomButton.astro";
+
+export async function getStaticPaths() {
+    const res = await fetch("https://api.robertriera.com/api/blog");
+    const posts: PostI[] = await res.json();
+
+    const paths = await Promise.all(
+        posts.map(async (post) => {
+            const postRes = await fetch(
+                `https://api.robertriera.com/api/blog/${post.id}`,
+            );
+            const fullPost: PostI = await postRes.json();
+
+            return {
+                params: { slug: post.slug },
+                props: { post: fullPost },
+            };
+        }),
+    );
+
+    return paths;
+}
+
+const { post } = Astro.props;
+---
+
+<Fragment set:head>
+    <title>{post.title}</title>
+    <meta name="description" content={post.description} />
+    <meta property="og:title" content={post.title} />
+    <meta property="og:description" content={post.description} />
+</Fragment>
+
+<Layout>
+    <Container columns={2} customColumnsSize={"3fr 2fr"}>
+        <Column>
+            <CountryCompany
+                label={`${post.author}`}
+                country="CO"
+                visible="mobile"
+            />
+            <CustomImg
+                src={post.thumbnail}
+                visible="mobile"
+                width="422"
+                height="auto"
+                alt={post.slug}
+                external={true}
+            />
+
+            <CountryCompany
+                label={`${post.author}`}
+                country="CO"
+                visible="desktop"
+            />
+            <Title>{post.title.split("-")[0]}</Title>
+            <Divider />
+            <Text>{post.description}</Text>
+        </Column>
+        <Column>
+            <br/>
+            <CustomImg
+                src={post.thumbnail}
+                visible="desktop"
+                width="422"
+                height="auto"
+                alt={post.slug}
+                external={true}
+            />
+        </Column>
+    </Container>
+    <Container columns={1}>
+        <div class="excerpt">
+            <p
+                class="prose prose-invert text-white [--tw-prose-links:#c0ff81]"
+                set:html={post.content}
+            />
+        </div>
+    </Container>
+</Layout>
+
+<style is:global>
+    .excerpt {
+        color: white;
+    }
+    .excerpt a {
+        color: #c0ff81 !important;
+        text-decoration: underline;
+        text-decoration-color: #c0ff81 !important;
+    }
+
+    .excerpt a:hover {
+        color: #a0e26c !important;
+        text-decoration-color: #a0e26c !important;
+    }
+    .excerpt figure {
+        display: none !important;
+    }
+</style>

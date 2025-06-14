@@ -10,12 +10,15 @@ const {
   hideTransition,
   alt,
   lazy = true,
+  external = false
 
 } = Astro.props;
+
+const finalSrc = external ? src : `${base_url}${src}`;
 ---
 
 <img
-  src={`${base_url}${src}`}
+  src={finalSrc}
   class={`${hideTransition ? "" : "image-transition"} ${visible === "mobile" ? "mobile-visible mobile-size" : "desktop-visible"}`}
   alt={alt || "Imagen responsive"}
   width={width || "100%"}
